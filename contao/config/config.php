@@ -9,6 +9,3 @@ declare(strict_types=1);
  *
  * @license MIT
  */
-
-// Back end modules
-$GLOBALS['BE_MOD']['company'] = [];
