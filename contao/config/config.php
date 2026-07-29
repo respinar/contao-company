@@ -9,3 +9,11 @@ declare(strict_types=1);
  *
  * @license MIT
  */
+
+use Respinar\CompanyBundle\Model\CompanyCategoryModel;
+
+$GLOBALS['BE_MOD']['company']['category'] = [
+    'tables' => ['tl_company_category'],
+];
+
+$GLOBALS['TL_MODELS']['tl_company_category'] = CompanyCategoryModel::class;
