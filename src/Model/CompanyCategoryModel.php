@@ -13,6 +13,7 @@ declare(strict_types=1);
 namespace Respinar\CompanyBundle\Model;
 
 use Contao\Model;
+use Contao\Model\Collection;
 
 class CompanyCategoryModel extends Model
 {
@@ -21,12 +22,12 @@ class CompanyCategoryModel extends Model
     /**
      * Find all categories by parent ID.
      *
-     * @param int   $intPid    The parent ID
+     * @param int   $intPid     The parent ID
      * @param array $arrOptions An optional options array
      *
-     * @return static[]|null
+     * @return array<static>|null
      */
-    public static function findByPid(int $intPid, array $arrOptions = []): ?\Contao\Model\Collection
+    public static function findByPid(int $intPid, array $arrOptions = []): Collection|null
     {
         $t = static::$strTable;
 
@@ -38,9 +39,9 @@ class CompanyCategoryModel extends Model
      *
      * @param array $arrOptions An optional options array
      *
-     * @return static[]|null
+     * @return array<static>|null
      */
-    public static function findRootCategories(array $arrOptions = []): ?\Contao\Model\Collection
+    public static function findRootCategories(array $arrOptions = []): Collection|null
     {
         $t = static::$strTable;
 
