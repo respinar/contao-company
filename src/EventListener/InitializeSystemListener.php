@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of Contao Company.
  *
- * (c) Hamid Peywasti 2026 <hamid@respinar.com>
+ * (c) Hamid Peywasti
  *
  * @license MIT
  */
@@ -32,25 +32,6 @@ class InitializeSystemListener
      */
     public function __invoke(): void
     {
-        // Reorder BE_MOD to place 'company' immediately after 'content'.
-        // Runs unconditionally because initializeSystem fires after all bundles
-        // (including child bundles) have registered their backend modules.
-        if (isset($GLOBALS['BE_MOD']['company']) && isset($GLOBALS['BE_MOD']['content'])) {
-            $companyModules = $GLOBALS['BE_MOD']['company'];
-            unset($GLOBALS['BE_MOD']['company']);
-
-            $keys = array_keys($GLOBALS['BE_MOD']);
-            $contentIndex = array_search('content', $keys, true);
-
-            if ($contentIndex !== false) {
-                $before = array_slice($GLOBALS['BE_MOD'], 0, $contentIndex + 1, true);
-                $after = array_slice($GLOBALS['BE_MOD'], $contentIndex + 1, null, true);
-                $GLOBALS['BE_MOD'] = array_merge($before, ['company' => $companyModules], $after);
-            } else {
-                $GLOBALS['BE_MOD']['company'] = $companyModules;
-            }
-        }
-
         $request = $this->requestStack->getCurrentRequest();
 
         if (!$request || !$this->scopeMatcher->isBackendRequest($request)) {
