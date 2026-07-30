@@ -10,7 +10,7 @@ A foundation bundle that registers the `company` backend module group for child 
 ## Requirements
 
 - PHP ^8.3
-- Contao ^5.3
+- Contao ^5.7
 
 ## Installation
 
