@@ -11,9 +11,15 @@ declare(strict_types=1);
  */
 
 use Respinar\CompanyBundle\Model\CompanyCategoryModel;
+use Respinar\CompanyBundle\Model\CompanyLocationModel;
 
 $GLOBALS['BE_MOD']['company']['category'] = [
     'tables' => ['tl_company_category'],
 ];
 
+$GLOBALS['BE_MOD']['company']['location'] = [
+    'tables' => ['tl_company_location'],
+];
+
 $GLOBALS['TL_MODELS']['tl_company_category'] = CompanyCategoryModel::class;
+$GLOBALS['TL_MODELS']['tl_company_location'] = CompanyLocationModel::class;
