@@ -77,21 +77,18 @@ $GLOBALS['TL_DCA']['tl_company_category'] = [
             'sql'                     => "int(10) unsigned NOT NULL default 0",
         ],
         'title' => [
-            'label'                   => &$GLOBALS['TL_LANG']['tl_company_category']['title'],
             'inputType'               => 'text',
             'search'                  => true,
             'eval'                    => ['mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
             'sql'                     => "varchar(255) NOT NULL default ''",
         ],
         'alias' => [
-            'label'                   => &$GLOBALS['TL_LANG']['tl_company_category']['alias'],
             'inputType'               => 'text',
             'search'                  => true,
             'eval'                    => ['rgxp' => 'alias', 'doNotCopy' => true, 'maxlength' => 128, 'tl_class' => 'w50'],
             'sql'                     => "varchar(128) BINARY NOT NULL default ''",
         ],
         'description' => [
-            'label'                   => &$GLOBALS['TL_LANG']['tl_company_category']['description'],
             'inputType'               => 'textarea',
             'search'                  => true,
             'eval'                    => ['rte' => 'tinyMCE', 'tl_class' => 'clr'],
