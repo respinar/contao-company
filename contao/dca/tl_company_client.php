@@ -11,6 +11,7 @@ declare(strict_types=1);
  */
 
 use Contao\DC_Table;
+use Contao\DataContainer;
 
 $GLOBALS['TL_DCA']['tl_company_client'] = [
     'config' => [
@@ -20,24 +21,41 @@ $GLOBALS['TL_DCA']['tl_company_client'] = [
         'sql'              => [
             'keys' => [
                 'id'        => 'primary',
+                'pid'       => 'index',
                 'alias'     => 'index',
                 'published' => 'index',
             ],
         ],
+
     ],
 
     'list' => [
         'sorting' => [
-            'mode'         => 4,
-            'fields'       => ['name'],
-            'flag'         => 1,
-            'headerFields' => ['title', 'alias'],
+            'mode'         => DataContainer::MODE_PARENT,
+            'fields'       => ['sorting'],
+            'headerFields' => ['title'],
             'panelLayout'  => 'filter;sort,search,limit',
         ],
+        'operations' => array
+        (
+            'edit',
+            'copy',
+            'cut',
+            'delete',
+            'toggle',
+            'feature' => array
+            (
+                'href'                => 'act=toggle&field=featured',
+                'icon'                => 'featured.svg',
+                'primary'             => true,
+                'showInHeader'        => true
+            ),
+            'show',
+        )
     ],
 
     'palettes' => [
-        'default' => '{title_legend},name,alias;{logo_legend},logo;{details_legend},website,location,description;{category_legend},categories;{publish_legend},published,start,stop',
+        'default' => '{title_legend},name,featured,alias;{logo_legend},logo;{details_legend},website,location,description;{category_legend},categories;{publish_legend},published,start,stop',
     ],
 
     'fields' => [
@@ -52,6 +70,9 @@ $GLOBALS['TL_DCA']['tl_company_client'] = [
             'sql'        => "int(10) unsigned NOT NULL default 0",
             'relation'   => ['type' => 'belongsTo', 'load' => 'eager'],
         ],
+        'sorting' => [
+                   'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
+               ],
         'name' => [
             'search'    => true,
             'sorting'   => true,
@@ -97,6 +118,14 @@ $GLOBALS['TL_DCA']['tl_company_client'] = [
             'sql'        => ['type' => 'blob', 'length' => 65535, 'notnull' => false],
             'relation'   => ['type' => 'hasMany', 'load' => 'lazy'],
         ],
+        'featured' => array
+        (
+            'toggle'                  => true,
+            'filter'                  => true,
+            'inputType'               => 'checkbox',
+            'eval'                    => array('tl_class'=>'w50'),
+            'sql'                     => array('type'=>'boolean', 'default'=>false)
+        ),
         'published' => [
             'toggle'    => true,
             'filter'    => true,
