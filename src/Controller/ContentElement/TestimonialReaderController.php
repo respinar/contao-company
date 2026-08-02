@@ -23,9 +23,8 @@ use Symfony\Component\HttpFoundation\Response;
 #[AsContentElement('testimonial_reader', category: 'company')]
 class TestimonialReaderController extends AbstractContentElementController
 {
-    public function __construct(
-        private readonly TestimonialRepository $repository,
-    ) {
+    public function __construct(private readonly TestimonialRepository $repository)
+    {
     }
 
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
@@ -35,7 +34,7 @@ class TestimonialReaderController extends AbstractContentElementController
         $testimonial = $this->repository->findByAlias($alias);
 
         $template->testimonial = $testimonial;
-        $template->model       = $model->row();
+        $template->model = $model->row();
 
         return $template->getResponse();
     }
