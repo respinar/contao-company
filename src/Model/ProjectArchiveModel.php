@@ -16,18 +16,18 @@ use Contao\Model;
 use Contao\Model\Collection;
 
 /**
- * Reads and writes project archives
+ * Reads and writes project archives.
  *
- * @property integer           $id
- * @property integer           $tstamp
+ * @property int               $id
+ * @property int               $tstamp
  * @property string            $title
- * @property integer           $jumpTo
- * @property boolean           $protected
+ * @property int               $jumpTo
+ * @property bool              $protected
  * @property string|array|null $groups
  *
- * @method static ProjectArchiveModel|null findById($id, array $opt=array())
- * @method static ProjectArchiveModel|null findByPk($id, array $opt=array())
- * @method static ProjectArchiveModel|null findOneBy($col, $val, array $opt=array())
+ * @method static ProjectArchiveModel|null             findById($id, array $opt=array())
+ * @method static ProjectArchiveModel|null             findByPk($id, array $opt=array())
+ * @method static ProjectArchiveModel|null             findOneBy($col, $val, array $opt=array())
  * @method static Collection<ProjectArchiveModel>|null findBy($col, $val, array $opt=array())
  * @method static Collection<ProjectArchiveModel>|null findAll(array $opt=array())
  */
