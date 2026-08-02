@@ -8,10 +8,9 @@ use Rector\Symfony\Set\SymfonySetList;
 use Rector\ValueObject\PhpVersion;
 
 return static function (RectorConfig $rectorConfig): void {
-
     $rectorConfig->paths([
-        __DIR__ . '/src',
-        __DIR__ . '/contao',
+        __DIR__.'/src',
+        __DIR__.'/contao',
     ]);
 
     $rectorConfig->phpVersion(PhpVersion::PHP_83);
