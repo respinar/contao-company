@@ -8,8 +8,8 @@ use Contao\CoreBundle\Framework\ContaoFramework;
 use Contao\CoreBundle\Routing\Content\ContentUrlResolverInterface;
 use Contao\CoreBundle\Routing\Content\ContentUrlResult;
 use Contao\PageModel;
-use Respinar\ProjectsBundle\Model\ProjectArchiveModel;
-use Respinar\ProjectsBundle\Model\ProjectModel;
+use Respinar\CompanyBundle\Model\ProjectArchiveModel;
+use Respinar\CompanyBundle\Model\ProjectModel;
 
 class ProjectResolver implements ContentUrlResolverInterface
 {
