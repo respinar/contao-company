@@ -47,7 +47,7 @@ class TestimonialListController extends AbstractContentElementController
         }
 
         $template->cards = array_map(
-            fn (array $t) => $this->parser->parseTestimonial($t, $model),
+            fn (array $t) => $this->renderer->renderTestimonial($t, $model),
             $testimonials,
         );
 

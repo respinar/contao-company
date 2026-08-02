@@ -13,13 +13,14 @@ declare(strict_types=1);
 namespace Respinar\CompanyBundle\Renderer;
 
 use Contao\ContentModel;
+use Contao\Config;
 use Contao\Date;
 use Contao\FrontendTemplate;
 use Respinar\CompanyBundle\Model\TestimonialModel;
 
 final class TestimonialRenderer
 {
-    public function renderTestimonial(TestimonialModel $testimonial, ContentModel $model): string
+    public function renderTestimonial(TestimonialModel|array $testimonial, ContentModel $model): string
     {
         $template = new FrontendTemplate(
             $model->testimonial_template ?: 'testimonial_short',
@@ -36,7 +37,7 @@ final class TestimonialRenderer
         $template->class = trim($class);
 
         $template->dateFormatted = !empty($testimonial['date'])
-            ? Date::parse(\Contao\Config::get('dateFormat'), (int) $testimonial['date'])
+            ? Date::parse(Config::get('dateFormat'), (int) $testimonial['date'])
             : '';
 
         return $template->parse();
