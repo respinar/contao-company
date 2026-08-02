@@ -20,9 +20,8 @@ use Respinar\CompanyBundle\Model\ClientModel;
 
 final class ClientRenderer
 {
-    public function __construct(
-        private readonly Studio $studio,
-    ) {
+    public function __construct(private readonly Studio $studio)
+    {
     }
 
     /**
