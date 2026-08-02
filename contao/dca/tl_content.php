@@ -91,7 +91,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['clientGroup'] = [
     'inputType' => 'select',
     'foreignKey' => 'tl_company_client_group.title',
     'eval' => ['mandatory' => true, 'chosen' => true, 'tl_class' => 'w50'],
-    'sql' => 'int(10) unsigned NOT NULL default 0',
+    'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
     'relation' => ['type' => 'belongsTo', 'load' => 'lazy'],
 ];
 
