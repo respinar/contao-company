@@ -89,7 +89,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['testimonial_order'] = [
 
 
 // Add palette for client_list content element
-$GLOBALS['TL_DCA']['tl_content']['palettes']['client_list'] = '{type_legend},type,headline;{client_legend},clientGroup;{template_legend:hide},customTpl,client_listClass,client_template;{image_legend},size;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['client_list'] = '{type_legend},type,headline;{client_legend},clientGroup;{template_legend:hide},customTpl,client_listClass,client_template,numberOfItems;{image_legend},size;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
 
 // Add clientGroup field
 $GLOBALS['TL_DCA']['tl_content']['fields']['clientGroup'] = [
