@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="php" original="contao/languages/en/tl_company_project.php" source-language="en">
+    <body>
+      <trans-unit id="tl_company_project.title_legend">
+        <source>Title</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.date_legend">
+        <source>Date and time</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.meta_legend">
+        <source>Meta data</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.category_legend">
+        <source>Categories</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.client_legend">
+        <source>Client</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.teaser_legend">
+        <source>Summary</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.image_legend">
+        <source>Image settings</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.publish_legend">
+        <source>Publish settings</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.title.0">
+        <source>Title</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.title.1">
+        <source>Please enter the project title.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.alias.0">
+        <source>Alias</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.alias.1">
+        <source>The project alias is a unique reference to the project which can be called instead of its numeric ID.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.author.0">
+        <source>Author</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.author.1">
+        <source>Here you can change the author of the project.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.date.0">
+        <source>Start date</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.date.1">
+        <source>Please enter the project start date according to the global date format.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.completionDate.0">
+        <source>Completion date</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.completionDate.1">
+        <source>Please enter the project completion date according to the global date format.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.pageTitle.0">
+        <source>Page title</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.pageTitle.1">
+        <source>Here you can add a custom page title to override the default headline.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.robots.0">
+        <source>Robots tag</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.robots.1">
+        <source>Here you can override the robots tag.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.description.0">
+        <source>Meta description</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.description.1">
+        <source>Here you can add a custom meta description to override the default summary.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.summary.0">
+        <source>Summary</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.summary.1">
+        <source>You can use HTML tags to format the summary.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.singleSRC.0">
+        <source>Featured image</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.singleSRC.1">
+        <source>Here you can select a featured image for the project.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.categories.0">
+        <source>Categories</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.categories.1">
+        <source>Please select one or more company categories.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.client.0">
+        <source>Client</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.client.1">
+        <source>Please select a client.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.featured.0">
+        <source>Featured project</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.featured.1">
+        <source>Show the project in a featured project list.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.published.0">
+        <source>Publish project</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.published.1">
+        <source>Make the project publicly visible on the website.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.start.0">
+        <source>Show from</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.start.1">
+        <source>Do not show the project on the website before this day.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.stop.0">
+        <source>Show until</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.stop.1">
+        <source>Do not show the project on the website on and after this day.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

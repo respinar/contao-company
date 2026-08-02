@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<xliff version="1.0">
+  <file identifier="en/tl_company_client_group">
+    <body>
+      <trans-unit id="title_legend">
+        <source>Title and alias</source>
+        <target>Title and alias</target>
+      </trans-unit>
+      <trans-unit id="protected_legend">
+        <source>Access protection</source>
+        <target>Access protection</target>
+      </trans-unit>
+      <trans-unit id="title_0">
+        <source>Title</source>
+        <target>Title</target>
+      </trans-unit>
+      <trans-unit id="title_1">
+        <source>Please enter the group title.</source>
+        <target>Please enter the group title.</target>
+      </trans-unit>
+      <trans-unit id="alias_0">
+        <source>Alias</source>
+        <target>Alias</target>
+      </trans-unit>
+      <trans-unit id="alias_1">
+        <source>The alias is a unique reference that can be used instead of the numeric ID.</source>
+        <target>The alias is a unique reference that can be used instead of the numeric ID.</target>
+      </trans-unit>
+      <trans-unit id="protected_0">
+        <source>Protect group</source>
+        <target>Protect group</target>
+      </trans-unit>
+      <trans-unit id="protected_1">
+        <source>Show clients in this group to certain member groups only.</source>
+        <target>Show clients in this group to certain member groups only.</target>
+      </trans-unit>
+      <trans-unit id="new_0">
+        <source>New group</source>
+        <target>New group</target>
+      </trans-unit>
+      <trans-unit id="new_1">
+        <source>Create a new client group</source>
+        <target>Create a new client group</target>
+      </trans-unit>
+      <trans-unit id="edit_0">
+        <source>Manage clients</source>
+        <target>Manage clients</target>
+      </trans-unit>
+      <trans-unit id="edit_1">
+        <source>Manage clients in group ID %s</source>
+        <target>Manage clients in group ID %s</target>
+      </trans-unit>
+      <trans-unit id="editheader_0">
+        <source>Edit group</source>
+        <target>Edit group</target>
+      </trans-unit>
+      <trans-unit id="editheader_1">
+        <source>Edit group ID %s</source>
+        <target>Edit group ID %s</target>
+      </trans-unit>
+      <trans-unit id="copy_0">
+        <source>Duplicate group</source>
+        <target>Duplicate group</target>
+      </trans-unit>
+      <trans-unit id="copy_1">
+        <source>Duplicate group ID %s</source>
+        <target>Duplicate group ID %s</target>
+      </trans-unit>
+      <trans-unit id="delete_0">
+        <source>Delete group</source>
+        <target>Delete group</target>
+      </trans-unit>
+      <trans-unit id="delete_1">
+        <source>Delete group ID %s</source>
+        <target>Delete group ID %s</target>
+      </trans-unit>
+      <trans-unit id="show_0">
+        <source>Group details</source>
+        <target>Group details</target>
+      </trans-unit>
+      <trans-unit id="show_1">
+        <source>Show details of group ID %s</source>
+        <target>Show details of group ID %s</target>
+      </trans-unit>
+      <trans-unit id="all_0">
+        <source>Edit multiple</source>
+        <target>Edit multiple</target>
+      </trans-unit>
+      <trans-unit id="all_1">
+        <source>Edit multiple groups at once</source>
+        <target>Edit multiple groups at once</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

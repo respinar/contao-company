@@ -1,0 +1,179 @@
+<?xml version="1.0" ?>
+<xliff version="1.0">
+  <file identifier="en/tl_company_client">
+    <body>
+      <trans-unit id="title_legend">
+        <source>Name and alias</source>
+        <target>Name and alias</target>
+      </trans-unit>
+      <trans-unit id="logo_legend">
+        <source>Logo</source>
+        <target>Logo</target>
+      </trans-unit>
+      <trans-unit id="details_legend">
+        <source>Details</source>
+        <target>Details</target>
+      </trans-unit>
+      <trans-unit id="category_legend">
+        <source>Categories</source>
+        <target>Categories</target>
+      </trans-unit>
+      <trans-unit id="publish_legend">
+        <source>Publish settings</source>
+        <target>Publish settings</target>
+      </trans-unit>
+      <trans-unit id="pid_0">
+        <source>Group</source>
+        <target>Group</target>
+      </trans-unit>
+      <trans-unit id="pid_1">
+        <source>The client group this client belongs to.</source>
+        <target>The client group this client belongs to.</target>
+      </trans-unit>
+      <trans-unit id="name_0">
+        <source>Name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="name_1">
+        <source>Please enter the client/company name.</source>
+        <target>Please enter the client/company name.</target>
+      </trans-unit>
+      <trans-unit id="alias_0">
+        <source>Alias</source>
+        <target>Alias</target>
+      </trans-unit>
+      <trans-unit id="alias_1">
+        <source>The alias is a unique reference that can be used instead of the numeric ID.</source>
+        <target>The alias is a unique reference that can be used instead of the numeric ID.</target>
+      </trans-unit>
+      <trans-unit id="logo_0">
+        <source>Logo</source>
+        <target>Logo</target>
+      </trans-unit>
+      <trans-unit id="logo_1">
+        <source>Please select a client logo.</source>
+        <target>Please select a client logo.</target>
+      </trans-unit>
+      <trans-unit id="website_0">
+        <source>Website</source>
+        <target>Website</target>
+      </trans-unit>
+      <trans-unit id="website_1">
+        <source>Please enter an external website URL.</source>
+        <target>Please enter an external website URL.</target>
+      </trans-unit>
+      <trans-unit id="description_0">
+        <source>Description</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="description_1">
+        <source>Please enter a description for this client.</source>
+        <target>Please enter a description for this client.</target>
+      </trans-unit>
+      <trans-unit id="industry_0">
+        <source>Industry</source>
+        <target>Industry</target>
+      </trans-unit>
+      <trans-unit id="industry_1">
+        <source>Please enter the industry this client operates in.</source>
+        <target>Please enter the industry this client operates in.</target>
+      </trans-unit>
+      <trans-unit id="location_0">
+        <source>Location</source>
+        <target>Location</target>
+      </trans-unit>
+      <trans-unit id="location_1">
+        <source>Please enter the client location.</source>
+        <target>Please enter the client location.</target>
+      </trans-unit>
+      <trans-unit id="categories_0">
+        <source>Categories</source>
+        <target>Categories</target>
+      </trans-unit>
+      <trans-unit id="categories_1">
+        <source>Please select one or more categories.</source>
+        <target>Please select one or more categories.</target>
+      </trans-unit>
+      <trans-unit id="published_0">
+        <source>Publish client</source>
+        <target>Publish client</target>
+      </trans-unit>
+      <trans-unit id="published_1">
+        <source>Make the client visible on the website.</source>
+        <target>Make the client visible on the website.</target>
+      </trans-unit>
+      <trans-unit id="start_0">
+        <source>Show from</source>
+        <target>Show from</target>
+      </trans-unit>
+      <trans-unit id="start_1">
+        <source>Do not show the client on the website before this date.</source>
+        <target>Do not show the client on the website before this date.</target>
+      </trans-unit>
+      <trans-unit id="stop_0">
+        <source>Show until</source>
+        <target>Show until</target>
+      </trans-unit>
+      <trans-unit id="stop_1">
+        <source>Do not show the client on the website after this date.</source>
+        <target>Do not show the client on the website after this date.</target>
+      </trans-unit>
+      <trans-unit id="new_0">
+        <source>New client</source>
+        <target>New client</target>
+      </trans-unit>
+      <trans-unit id="new_1">
+        <source>Create a new client</source>
+        <target>Create a new client</target>
+      </trans-unit>
+      <trans-unit id="edit_0">
+        <source>Edit client</source>
+        <target>Edit client</target>
+      </trans-unit>
+      <trans-unit id="edit_1">
+        <source>Edit client ID %s</source>
+        <target>Edit client ID %s</target>
+      </trans-unit>
+      <trans-unit id="copy_0">
+        <source>Duplicate client</source>
+        <target>Duplicate client</target>
+      </trans-unit>
+      <trans-unit id="copy_1">
+        <source>Duplicate client ID %s</source>
+        <target>Duplicate client ID %s</target>
+      </trans-unit>
+      <trans-unit id="delete_0">
+        <source>Delete client</source>
+        <target>Delete client</target>
+      </trans-unit>
+      <trans-unit id="delete_1">
+        <source>Delete client ID %s</source>
+        <target>Delete client ID %s</target>
+      </trans-unit>
+      <trans-unit id="show_0">
+        <source>Client details</source>
+        <target>Client details</target>
+      </trans-unit>
+      <trans-unit id="show_1">
+        <source>Show details of client ID %s</source>
+        <target>Show details of client ID %s</target>
+      </trans-unit>
+      <trans-unit id="toggle_0">
+        <source>Publish/unpublish client</source>
+        <target>Publish/unpublish client</target>
+      </trans-unit>
+      <trans-unit id="toggle_1">
+        <source>Publish/unpublish client ID %s</source>
+        <target>Publish/unpublish client ID %s</target>
+      </trans-unit>
+      <trans-unit id="all_0">
+        <source>Edit multiple</source>
+        <target>Edit multiple</target>
+      </trans-unit>
+      <trans-unit id="all_1">
+        <source>Edit multiple clients at once</source>
+        <target>Edit multiple clients at once</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
