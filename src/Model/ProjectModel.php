@@ -1,0 +1,47 @@
+<?php
+
+declare(strict_types=1);
+
+/*
+ * This file is part of Contao Company Bundle.
+ *
+ * (c) Hamid Peywasti
+ *
+ * @license MIT
+ */
+
+namespace Respinar\CompanyBundle\Model;
+
+use Contao\Model;
+use Contao\Model\Collection;
+
+/**
+ * Reads and writes projects
+ *
+ * @property integer  $id
+ * @property integer  $pid
+ * @property integer  $tstamp
+ * @property string   $title
+ * @property string   $alias
+ * @property integer  $author
+ * @property integer  $date
+ * @property integer  $completionDate
+ * @property boolean  $featured
+ * @property string   $summary
+ * @property string   $description
+ * @property string   $singleSRC
+ * @property string   $multiSRC
+ * @property boolean  $published
+ * @property string   $start
+ * @property string   $stop
+ *
+ * @method static ProjectModel|null findById($id, array $opt=array())
+ * @method static ProjectModel|null findByPk($id, array $opt=array())
+ * @method static ProjectModel|null findOneBy($col, $val, array $opt=array())
+ * @method static Collection<ProjectModel>|null findBy($col, $val, array $opt=array())
+ * @method static Collection<ProjectModel>|null findAll(array $opt=array())
+ */
+class ProjectModel extends Model
+{
+    protected static $strTable = 'tl_company_project';
+}
