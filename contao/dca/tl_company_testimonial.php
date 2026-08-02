@@ -11,6 +11,7 @@ declare(strict_types=1);
  */
 
 use Contao\DC_Table;
+use Contao\DataContainer;
 
 $GLOBALS['TL_DCA']['tl_company_testimonial'] = [
     'config' => [
@@ -20,26 +21,37 @@ $GLOBALS['TL_DCA']['tl_company_testimonial'] = [
         'sql' => [
             'keys' => [
                 'id' => 'primary',
+                'tstamp' => 'index',
                 'alias' => 'index',
-                'pid' => 'index',
+                'pid,published,featured,start,stop' => 'index'
             ],
         ],
     ],
 
     'list' => [
         'sorting' => [
-            'mode' => 4,
-            'fields' => ['sorting'],
+            'mode' => DataContainer::MODE_PARENT,
+            'fields' => ['date DESC'],
             'headerFields' => ['title', 'jumpTo', 'tstamp', 'protected'],
             'panelLayout' => 'filter;sorting,search,limit',
-            'child_record_callback' => ['Respinar\TestimonialsBundle\Model\TestimonialModel', 'listTestimonials'],
+            // 'child_record_callback' => ['Respinar\CompanyBundle\Model\TestimonialModel', 'listTestimonials'],
         ],
-
+        'label' => array
+        (
+            'fields'                  => array('title', 'date'),
+            'format'                  => '%s <span class="label-info">[%s]</span>',
+        ),
         'operations' => [
             'edit' ,
             'copy',
             'delete',
             'toggle',
+            'feature' => array
+            (
+                'href'                => 'act=toggle&field=featured',
+                'icon'                => 'featured.svg',
+                'primary'             => true,
+            ),
             'show',
         ],
     ],
