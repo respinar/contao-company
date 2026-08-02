@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 use Contao\DataContainer;
 use Contao\DC_Table;
+use Doctrine\DBAL\Platforms\AbstractMySQLPlatform;
 
 $GLOBALS['TL_DCA']['tl_company_testimonial'] = [
     'config' => [
@@ -23,7 +24,7 @@ $GLOBALS['TL_DCA']['tl_company_testimonial'] = [
                 'id' => 'primary',
                 'tstamp' => 'index',
                 'alias' => 'index',
-                'pid,published,featured' => 'index',
+                'pid,published,featured,start,stop' => 'index',
             ],
         ],
     ],
@@ -34,8 +35,6 @@ $GLOBALS['TL_DCA']['tl_company_testimonial'] = [
             'fields' => ['date DESC'],
             'headerFields' => ['title', 'jumpTo', 'tstamp', 'protected'],
             'panelLayout' => 'filter;sorting,search,limit',
-            // 'child_record_callback' =>
-            // ['Respinar\CompanyBundle\Model\TestimonialModel', 'listTestimonials'],
         ],
         'label' => [
             'fields' => ['title', 'date'],
@@ -56,58 +55,58 @@ $GLOBALS['TL_DCA']['tl_company_testimonial'] = [
     ],
 
     'palettes' => [
-        'default' => '{title_legend},title,featured,alias,date;{person_legend},client,personName,position;{categories_legend},categories;{relation_legend},project;{content_legend},quote;{media_legend},letterImage,pdf;{publish_legend},published,sorting',
+        'default' => '{title_legend},title,featured,alias,date;{person_legend},client,personName,position;{categories_legend},categories;{relation_legend},project;{content_legend},quote;{media_legend},letterImage,pdf;{publish_legend},published,start,stop',
     ],
 
     'fields' => [
         'id' => [
-            'sql' => 'int(10) unsigned NOT NULL auto_increment',
+            'sql' => ['type' => 'integer', 'unsigned' => true, 'autoincrement' => true],
         ],
         'pid' => [
             'foreignKey' => 'tl_company_testimonial_archive.title',
-            'sql' => 'int(10) unsigned NOT NULL default 0',
+            'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
             'relation' => ['type' => 'belongsTo', 'load' => 'lazy'],
         ],
         'tstamp' => [
-            'sql' => 'int(10) unsigned NOT NULL default 0',
+            'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
         ],
         'title' => [
             'inputType' => 'text',
             'search' => true,
             'eval' => ['mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
-            'sql' => "varchar(255) NOT NULL default ''",
+            'sql' => ['type' => 'string', 'length' => 255, 'default' => ''],
         ],
         'alias' => [
             'inputType' => 'text',
             'search' => true,
             'eval' => ['rgxp' => 'alias', 'doNotCopy' => true, 'unique' => true, 'maxlength' => 128, 'tl_class' => 'w50'],
-            'sql' => "varchar(128) NOT NULL default ''",
+            'sql' => ['type' => 'string', 'length' => 128, 'default' => ''],
         ],
         'personName' => [
             'inputType' => 'text',
             'search' => true,
             'eval' => ['maxlength' => 255, 'tl_class' => 'w50 clr'],
-            'sql' => "varchar(255) NOT NULL default ''",
+            'sql' => ['type' => 'string', 'length' => 255, 'default' => ''],
         ],
         'position' => [
             'inputType' => 'text',
             'eval' => ['maxlength' => 255, 'tl_class' => 'w50'],
-            'sql' => "varchar(255) NOT NULL default ''",
+            'sql' => ['type' => 'string', 'length' => 255, 'default' => ''],
         ],
         'quote' => [
             'inputType' => 'textarea',
             'eval' => ['rte' => 'tinyMCE', 'tl_class' => 'clr'],
-            'sql' => 'text NULL',
+            'sql' => ['type' => 'text', 'length' => AbstractMySQLPlatform::LENGTH_LIMIT_TEXT, 'notnull' => false],
         ],
         'letterImage' => [
             'inputType' => 'fileTree',
             'eval' => ['filesOnly' => true, 'fieldType' => 'radio', 'extensions' => 'jpg,jpeg,png,gif,svg', 'tl_class' => 'clr'],
-            'sql' => 'binary(16) NULL',
+            'sql' => ['type' => 'binary', 'length' => 16, 'notnull' => false],
         ],
         'pdf' => [
             'inputType' => 'fileTree',
             'eval' => ['filesOnly' => true, 'fieldType' => 'radio', 'extensions' => 'pdf', 'tl_class' => 'clr'],
-            'sql' => 'binary(16) NULL',
+            'sql' => ['type' => 'binary', 'length' => 16, 'notnull' => false],
         ],
         'categories' => [
             'inputType' => 'picker',
@@ -120,34 +119,44 @@ $GLOBALS['TL_DCA']['tl_company_testimonial'] = [
             'inputType' => 'picker',
             'foreignKey' => 'tl_company_client.name',
             'eval' => ['mandatory' => true, 'tl_class' => 'w50'],
-            'sql' => 'int(10) unsigned NOT NULL default 0',
+            'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
             'relation' => ['type' => 'hasOne', 'load' => 'lazy'],
         ],
         'project' => [
             'inputType' => 'picker',
             'foreignKey' => 'tl_company_project.title',
             'eval' => ['tl_class' => 'w50'],
-            'sql' => 'int(10) unsigned NOT NULL default 0',
+            'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
             'relation' => ['type' => 'hasOne', 'load' => 'lazy'],
         ],
         'date' => [
             'inputType' => 'text',
             'eval' => ['rgxp' => 'date', 'datepicker' => true, 'tl_class' => 'w50 wizard'],
-            'sql' => "varchar(10) NOT NULL default ''",
+            'sql' => ['type' => 'string', 'length' => 10, 'default' => ''],
         ],
         'featured' => [
+            'toggle' => true,
+            'filter' => true,
             'inputType' => 'checkbox',
             'eval' => ['tl_class' => 'w50 m12'],
-            'sql' => "char(1) NOT NULL default ''",
+            'sql' => ['type' => 'boolean', 'default' => false],
         ],
         'published' => [
-            'inputType' => 'checkbox',
             'toggle' => true,
+            'filter' => true,
+            'inputType' => 'checkbox',
             'eval' => ['doNotCopy' => true],
-            'sql' => "char(1) NOT NULL default ''",
+            'sql' => ['type' => 'boolean', 'default' => false],
         ],
-        'sorting' => [
-            'sql' => 'int(10) unsigned NOT NULL default 0',
+        'start' => [
+            'inputType' => 'text',
+            'eval' => ['rgxp' => 'datim', 'datepicker' => true, 'tl_class' => 'w50 wizard'],
+            'sql' => ['type' => 'string', 'length' => 10, 'default' => ''],
+        ],
+        'stop' => [
+            'inputType' => 'text',
+            'eval' => ['rgxp' => 'datim', 'datepicker' => true, 'tl_class' => 'w50 wizard'],
+            'sql' => ['type' => 'string', 'length' => 10, 'default' => ''],
         ],
     ],
 ];
