@@ -53,10 +53,10 @@ $GLOBALS['TL_DCA']['tl_company_testimonial_archive'] = [
 
     'fields' => [
         'id' => [
-            'sql' => 'int(10) unsigned NOT NULL auto_increment',
+            'sql' => ['type' => 'integer', 'unsigned' => true, 'autoincrement' => true],
         ],
         'tstamp' => [
-            'sql' => 'int(10) unsigned NOT NULL default 0',
+            'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
         ],
         'title' => [
             'search' => true,
@@ -74,7 +74,7 @@ $GLOBALS['TL_DCA']['tl_company_testimonial_archive'] = [
             'inputType' => 'pageTree',
             'foreignKey' => 'tl_page.title',
             'eval' => ['mandatory' => true, 'fieldType' => 'radio', 'tl_class' => 'clr'],
-            'sql' => 'int(10) unsigned NOT NULL default 0',
+            'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
             'relation' => ['type' => 'hasOne', 'load' => 'lazy'],
         ],
         'protected' => [
