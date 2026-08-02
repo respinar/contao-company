@@ -33,13 +33,11 @@ class ClientListController extends AbstractContentElementController
     {
         $clients = [];
 
-        if (!empty($model->clientGroup)) {
-            $clientCollection = ClientModel::findBy(
-                ['pid=?', 'published=1'],
-                [$model->clientGroup],
-                ['order' => 'name ASC']
-            );
+        if (empty($model->clientGroup)) {
+            return $template->getResponse('');
         }
+
+        $clientCollection = ClientModel::findPublishedByPid($model->clientGroup);
 
         if ($clientCollection !== null) {
             foreach ($clientCollection as $client) {
