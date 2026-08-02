@@ -15,12 +15,12 @@ use Doctrine\DBAL\Platforms\AbstractMySQLPlatform;
 
 $GLOBALS['TL_DCA']['tl_company_client_group'] = [
     'config' => [
-        'dataContainer'    => DC_Table::class,
+        'dataContainer' => DC_Table::class,
         'enableVersioning' => true,
-        'switchToEdit'     => true,
-        'ctable'           => ['tl_company_client'],
-        'userRoot'         => 'clients',
-        'sql'              => [
+        'switchToEdit' => true,
+        'ctable' => ['tl_company_client'],
+        'userRoot' => 'clients',
+        'sql' => [
             'keys' => [
                 'id' => 'primary',
             ],
@@ -29,9 +29,9 @@ $GLOBALS['TL_DCA']['tl_company_client_group'] = [
 
     'list' => [
         'sorting' => [
-            'mode'        => 1,
-            'fields'      => ['title'],
-            'flag'        => 1,
+            'mode' => 1,
+            'fields' => ['title'],
+            'flag' => 1,
             'panelLayout' => 'filter;search,limit',
         ],
         'label' => [
@@ -42,7 +42,7 @@ $GLOBALS['TL_DCA']['tl_company_client_group'] = [
 
     'palettes' => [
         '__selector__' => ['protected'],
-        'default'      => '{title_legend},title,alias;{protected_legend:hide},protected',
+        'default' => '{title_legend},title,alias;{protected_legend:hide},protected',
     ],
 
     'subpalettes' => [
@@ -57,31 +57,31 @@ $GLOBALS['TL_DCA']['tl_company_client_group'] = [
             'sql' => 'int(10) unsigned NOT NULL default 0',
         ],
         'title' => [
-            'search'    => true,
-            'sorting'   => true,
-            'flag'      => 1,
+            'search' => true,
+            'sorting' => true,
+            'flag' => 1,
             'inputType' => 'text',
-            'eval'      => ['mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
-            'sql'       => "varchar(255) NOT NULL default ''",
+            'eval' => ['mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
+            'sql' => "varchar(255) NOT NULL default ''",
         ],
         'alias' => [
-            'search'    => true,
+            'search' => true,
             'inputType' => 'text',
-            'eval'      => ['rgxp' => 'alias', 'doNotCopy' => true, 'maxlength' => 128, 'tl_class' => 'w50'],
-            'sql'       => "varchar(128) COLLATE utf8mb4_bin NOT NULL default ''",
+            'eval' => ['rgxp' => 'alias', 'doNotCopy' => true, 'maxlength' => 128, 'tl_class' => 'w50'],
+            'sql' => "varchar(128) COLLATE utf8mb4_bin NOT NULL default ''",
         ],
         'protected' => [
-            'filter'    => true,
+            'filter' => true,
             'inputType' => 'checkbox',
-            'eval'      => ['submitOnChange' => true],
-            'sql'       => "char(1) NOT NULL default ''",
+            'eval' => ['submitOnChange' => true],
+            'sql' => "char(1) NOT NULL default ''",
         ],
         'groups' => [
-            'inputType'  => 'checkbox',
+            'inputType' => 'checkbox',
             'foreignKey' => 'tl_member_group.name',
-            'eval'       => ['mandatory' => true, 'multiple' => true],
-            'sql'        => ['type' => 'blob', 'length' => AbstractMySQLPlatform::LENGTH_LIMIT_BLOB, 'notnull' => false],
-            'relation'   => ['type' => 'hasMany', 'load' => 'lazy'],
+            'eval' => ['mandatory' => true, 'multiple' => true],
+            'sql' => ['type' => 'blob', 'length' => AbstractMySQLPlatform::LENGTH_LIMIT_BLOB, 'notnull' => false],
+            'relation' => ['type' => 'hasMany', 'load' => 'lazy'],
         ],
     ],
 ];
