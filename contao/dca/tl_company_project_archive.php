@@ -1,0 +1,114 @@
+<?php
+
+declare(strict_types=1);
+
+/*
+ * This file is part of Contao Company Bundle.
+ *
+ * (c) Hamid Peywasti
+ *
+ * @license MIT
+ */
+
+use Contao\DataContainer;
+use Contao\DC_Table;
+use Doctrine\DBAL\Platforms\AbstractMySQLPlatform;
+
+$GLOBALS['TL_DCA']['tl_company_project_archive'] = array
+(
+    'config' => array
+    (
+        'dataContainer'               => DC_Table::class,
+        'ctable'                      => array('tl_company_project'),
+        'switchToEdit'                => true,
+        'enableVersioning'            => true,
+        'markAsCopy'                  => 'title',
+        'userRoot'                    => 'projects',
+        'sql' => array
+        (
+            'keys' => array
+            (
+                'id' => 'primary',
+                'tstamp' => 'index',
+                'overviewPage' => 'index',
+                'jumpTo' => 'index'
+            )
+        )
+    ),
+    'list' => array
+    (
+        'sorting' => array
+        (
+            'mode'                    => DataContainer::MODE_SORTED,
+            'fields'                  => array('title'),
+            'flag'                    => DataContainer::SORT_INITIAL_LETTER_ASC,
+            'panelLayout'             => 'filter;search,limit',
+            'defaultSearchField'      => 'title'
+        ),
+        'label' => array
+        (
+            'fields'                  => array('title'),
+            'format'                  => '%s'
+        )
+    ),
+    'palettes' => array
+    (
+        '__selector__'                => array('protected'),
+        'default'                     => '{title_legend},title;{redirect_legend},overviewPage,jumpTo;{protected_legend:hide},protected'
+    ),
+    'subpalettes' => array
+    (
+        'protected'                   => 'groups'
+    ),
+    'fields' => array
+    (
+        'id' => array
+        (
+            'sql'                     => array('type'=>'integer', 'unsigned'=>true, 'autoincrement'=>true)
+        ),
+        'tstamp' => array
+        (
+            'sql'                     => array('type'=>'integer', 'unsigned'=>true, 'default'=>0)
+        ),
+        'title' => array
+        (
+            'search'                  => true,
+            'sorting'                 => true,
+            'flag'                    => DataContainer::SORT_INITIAL_LETTER_ASC,
+            'inputType'               => 'text',
+            'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => array('type'=>'string', 'length'=>255, 'default'=>'')
+        ),
+        'overviewPage' => array
+        (
+            'inputType'               => 'pageTree',
+            'foreignKey'              => 'tl_page.title',
+            'eval'                    => array('mandatory'=>true, 'fieldType'=>'radio', 'tl_class'=>'clr'),
+            'sql'                     => array('type'=>'integer', 'unsigned'=>true, 'default'=>0),
+            'relation'                => array('type'=>'hasOne', 'load'=>'lazy')
+        ),
+        'jumpTo' => array
+        (
+            'inputType'               => 'pageTree',
+            'foreignKey'              => 'tl_page.title',
+            'eval'                    => array('mandatory'=>true, 'fieldType'=>'radio', 'tl_class'=>'clr'),
+            'sql'                     => array('type'=>'integer', 'unsigned'=>true, 'default'=>0),
+            'relation'                => array('type'=>'hasOne', 'load'=>'lazy')
+        ),
+        'protected' => array
+        (
+            'filter'                  => true,
+            'inputType'               => 'checkbox',
+            'eval'                    => array('submitOnChange'=>true),
+            'sql'                     => array('type'=>'boolean', 'default'=>false)
+        ),
+        'groups' => array
+        (
+            'inputType'               => 'checkbox',
+            'foreignKey'              => 'tl_member_group.name',
+            'eval'                    => array('mandatory'=>true, 'multiple'=>true),
+            'sql'                     => array('type'=>'blob', 'length'=>AbstractMySQLPlatform::LENGTH_LIMIT_BLOB, 'notnull'=>false),
+            'relation'                => array('type'=>'hasMany', 'load'=>'lazy')
+        )
+    )
+);
