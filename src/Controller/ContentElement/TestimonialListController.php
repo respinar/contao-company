@@ -18,8 +18,8 @@ use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
 use Contao\CoreBundle\Twig\FragmentTemplate;
 use Contao\StringUtil;
 use Contao\System;
-use Respinar\CompanyBundle\Repository\TestimonialRepository;
 use Respinar\CompanyBundle\Renderer\TestimonialRenderer;
+use Respinar\CompanyBundle\Repository\TestimonialRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -34,11 +34,11 @@ class TestimonialListController extends AbstractContentElementController
 
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
-        $archives   = StringUtil::deserialize($model->testimonial_archives, true);
+        $archives = StringUtil::deserialize($model->testimonial_archives, true);
         $categories = StringUtil::deserialize($model->testimonial_categories, true);
-        $featured   = $model->testimonial_featured;
-        $limit      = $model->numberOfItems > 0 ? (int) $model->numberOfItems : null;
-        $order      = $model->testimonial_order;
+        $featured = $model->testimonial_featured;
+        $limit = $model->numberOfItems > 0 ? (int) $model->numberOfItems : null;
+        $order = $model->testimonial_order;
 
         $testimonials = $this->repository->findPublished($archives, $categories, $featured, $order, $limit);
 
