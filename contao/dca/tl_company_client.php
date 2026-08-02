@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 use Contao\DataContainer;
 use Contao\DC_Table;
+use Doctrine\DBAL\Platforms\AbstractMySQLPlatform;
 
 $GLOBALS['TL_DCA']['tl_company_client'] = [
     'config' => [
@@ -57,14 +58,14 @@ $GLOBALS['TL_DCA']['tl_company_client'] = [
 
     'fields' => [
         'id' => [
-            'sql' => 'int(10) unsigned NOT NULL auto_increment',
+            'sql' => ['type' => 'integer', 'unsigned' => true, 'autoincrement' => true],
         ],
         'tstamp' => [
-            'sql' => 'int(10) unsigned NOT NULL default 0',
+            'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
         ],
         'pid' => [
             'foreignKey' => 'tl_company_client_group.title',
-            'sql' => 'int(10) unsigned NOT NULL default 0',
+            'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
             'relation' => ['type' => 'belongsTo', 'load' => 'eager'],
         ],
         'sorting' => [
@@ -87,7 +88,7 @@ $GLOBALS['TL_DCA']['tl_company_client'] = [
         'logo' => [
             'inputType' => 'fileTree',
             'eval' => ['filesOnly' => true, 'fieldType' => 'radio', 'extensions' => 'jpg,jpeg,png,gif,svg,webp', 'tl_class' => 'clr'],
-            'sql' => 'binary(16) NULL',
+            'sql' => ['type' => 'binary', 'length' => 16, 'notnull' => false],
         ],
         'website' => [
             'search' => true,
@@ -99,7 +100,7 @@ $GLOBALS['TL_DCA']['tl_company_client'] = [
             'search' => true,
             'inputType' => 'textarea',
             'eval' => ['rte' => 'tinyMCE', 'tl_class' => 'clr'],
-            'sql' => 'mediumtext NULL',
+            'sql' => ['type' => 'text', 'length' => AbstractMySQLPlatform::LENGTH_LIMIT_MEDIUMTEXT, 'notnull' => false],
         ],
         'location' => [
             'inputType' => 'picker',
