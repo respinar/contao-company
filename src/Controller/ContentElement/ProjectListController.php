@@ -26,7 +26,7 @@ use Symfony\Component\HttpFoundation\Response;
 class ProjectListController extends AbstractContentElementController
 {
     public function __construct(
-        private readonly ProjectRenderer $project_renderer,
+        private readonly ProjectRenderer $projectRenderer,
     ) {
     }
 
@@ -36,30 +36,20 @@ class ProjectListController extends AbstractContentElementController
         $archives = array_filter($archives);
 
         if (empty($archives)) {
-            return new Response('');
+            return $template->getResponse('');
         }
 
-        $time = time();
-        $columns = array(
-            'pid IN (' . implode(',', array_fill(0, count($archives), '?')) . ')',
-            'published=1',
-            "(start='' OR start<=$time)",
-            "(stop='' OR stop>$time)"
-        );
-
-        $values = $archives;
-
-        $projectCollection = ProjectModel::findBy($columns, $values, array('order' => 'date DESC'));
+        $projectCollection = ProjectModel::findPublishedByPids($archives);
 
         if ($projectCollection === null) {
-            return new Response('');
+            return $template->getResponse('');
         }
 
         // Preload all images in one query
         $projects = [];
 
         foreach ($projectCollection as $project) {
-            $projects[] = $this->project_renderer->render($project, $model);
+            $projects[] = $this->projectRenderer->render($project, $model);
         }
 
         $template->set('projects', $projects);
