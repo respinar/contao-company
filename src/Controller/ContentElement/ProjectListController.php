@@ -25,9 +25,8 @@ use Symfony\Component\HttpFoundation\Response;
 #[AsContentElement('project_list', category: 'company')]
 class ProjectListController extends AbstractContentElementController
 {
-    public function __construct(
-        private readonly ProjectRenderer $projectRenderer,
-    ) {
+    public function __construct(private readonly ProjectRenderer $projectRenderer)
+    {
     }
 
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
@@ -41,7 +40,7 @@ class ProjectListController extends AbstractContentElementController
 
         $projectCollection = ProjectModel::findPublishedByPids($archives);
 
-        if ($projectCollection === null) {
+        if (null === $projectCollection) {
             return $template->getResponse('');
         }
 
