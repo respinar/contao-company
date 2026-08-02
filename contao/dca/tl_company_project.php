@@ -62,13 +62,7 @@ $GLOBALS['TL_DCA']['tl_company_project'] = array
             'copy',
             'cut',
             'delete',
-            'toggle' => array
-            (
-                'href'                => 'act=toggle&field=published',
-                'icon'                => 'visible.svg',
-                'primary'             => true,
-                'showInHeader'        => true
-            ),
+            'toggle',
             'feature' => array
             (
                 'href'                => 'act=toggle&field=featured',
@@ -76,7 +70,6 @@ $GLOBALS['TL_DCA']['tl_company_project'] = array
                 'primary'             => true,
             ),
             'show',
-            'versions',
         )
     ),
     'palettes' => array
