@@ -21,7 +21,6 @@ use Contao\StringUtil;
 use Respinar\CompanyBundle\Model\ProjectModel;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
-
 final class ProjectRenderer
 {
     public function __construct(
@@ -57,7 +56,6 @@ final class ProjectRenderer
         }
 
         $template->class = trim($class);
-
 
         $template->hasText = false;
 
