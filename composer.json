@@ -21,7 +21,7 @@
         "contao/core-bundle": "^5.7"
     },
     "require-dev": {
-        "contao/manager-plugin": "^2.12"
+        "contao/manager-plugin": "^2.13"
     },
     "autoload": {
         "psr-4": {
@@ -35,5 +35,12 @@
     },
     "extra": {
         "contao-manager-plugin": "Respinar\\CompanyBundle\\ContaoManager\\Plugin"
+    },
+    "config": {
+        "allow-plugins": {
+            "contao-components/installer": true,
+            "php-http/discovery": true,
+            "contao/manager-plugin": true
+        }
     }
 }
