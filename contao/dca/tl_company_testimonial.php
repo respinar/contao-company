@@ -10,8 +10,8 @@ declare(strict_types=1);
  * @license MIT
  */
 
-use Contao\DC_Table;
 use Contao\DataContainer;
+use Contao\DC_Table;
 
 $GLOBALS['TL_DCA']['tl_company_testimonial'] = [
     'config' => [
@@ -23,7 +23,7 @@ $GLOBALS['TL_DCA']['tl_company_testimonial'] = [
                 'id' => 'primary',
                 'tstamp' => 'index',
                 'alias' => 'index',
-                'pid,published,featured,start,stop' => 'index'
+                'pid,published,featured,start,stop' => 'index',
             ],
         ],
     ],
@@ -34,24 +34,23 @@ $GLOBALS['TL_DCA']['tl_company_testimonial'] = [
             'fields' => ['date DESC'],
             'headerFields' => ['title', 'jumpTo', 'tstamp', 'protected'],
             'panelLayout' => 'filter;sorting,search,limit',
-            // 'child_record_callback' => ['Respinar\CompanyBundle\Model\TestimonialModel', 'listTestimonials'],
+            // 'child_record_callback' =>
+            // ['Respinar\CompanyBundle\Model\TestimonialModel', 'listTestimonials'],
         ],
-        'label' => array
-        (
-            'fields'                  => array('title', 'date'),
-            'format'                  => '%s <span class="label-info">[%s]</span>',
-        ),
+        'label' => [
+            'fields' => ['title', 'date'],
+            'format' => '%s <span class="label-info">[%s]</span>',
+        ],
         'operations' => [
-            'edit' ,
+            'edit',
             'copy',
             'delete',
             'toggle',
-            'feature' => array
-            (
-                'href'                => 'act=toggle&field=featured',
-                'icon'                => 'featured.svg',
-                'primary'             => true,
-            ),
+            'feature' => [
+                'href' => 'act=toggle&field=featured',
+                'icon' => 'featured.svg',
+                'primary' => true,
+            ],
             'show',
         ],
     ],
@@ -62,15 +61,15 @@ $GLOBALS['TL_DCA']['tl_company_testimonial'] = [
 
     'fields' => [
         'id' => [
-            'sql' => "int(10) unsigned NOT NULL auto_increment",
+            'sql' => 'int(10) unsigned NOT NULL auto_increment',
         ],
         'pid' => [
             'foreignKey' => 'tl_company_testimonial_archive.title',
-            'sql' => "int(10) unsigned NOT NULL default 0",
+            'sql' => 'int(10) unsigned NOT NULL default 0',
             'relation' => ['type' => 'belongsTo', 'load' => 'lazy'],
         ],
         'tstamp' => [
-            'sql' => "int(10) unsigned NOT NULL default 0",
+            'sql' => 'int(10) unsigned NOT NULL default 0',
         ],
         'title' => [
             'inputType' => 'text',
@@ -111,25 +110,25 @@ $GLOBALS['TL_DCA']['tl_company_testimonial'] = [
             'sql' => 'binary(16) NULL',
         ],
         'categories' => [
-            'inputType'  => 'picker',
+            'inputType' => 'picker',
             'foreignKey' => 'tl_company_category.title',
-            'eval'       => ['multiple' => true, 'tl_class' => 'clr'],
-            'sql'        => ['type' => 'blob', 'length' => 65535, 'notnull' => false],
-            'relation'   => ['type' => 'hasMany', 'load' => 'lazy'],
+            'eval' => ['multiple' => true, 'tl_class' => 'clr'],
+            'sql' => ['type' => 'blob', 'length' => 65535, 'notnull' => false],
+            'relation' => ['type' => 'hasMany', 'load' => 'lazy'],
         ],
         'client' => [
-            'inputType'  => 'picker',
+            'inputType' => 'picker',
             'foreignKey' => 'tl_company_client.name',
-            'eval'       => ['mandatory' => true, 'tl_class' => 'w50'],
-            'sql'        => "int(10) unsigned NOT NULL default 0",
-            'relation'   => ['type' => 'hasOne', 'load' => 'lazy'],
+            'eval' => ['mandatory' => true, 'tl_class' => 'w50'],
+            'sql' => 'int(10) unsigned NOT NULL default 0',
+            'relation' => ['type' => 'hasOne', 'load' => 'lazy'],
         ],
         'project' => [
-            'inputType'  => 'picker',
+            'inputType' => 'picker',
             'foreignKey' => 'tl_company_project.title',
-            'eval'       => ['tl_class' => 'w50'],
-            'sql'        => "int(10) unsigned NOT NULL default 0",
-            'relation'   => ['type' => 'hasOne', 'load' => 'lazy'],
+            'eval' => ['tl_class' => 'w50'],
+            'sql' => 'int(10) unsigned NOT NULL default 0',
+            'relation' => ['type' => 'hasOne', 'load' => 'lazy'],
         ],
         'date' => [
             'inputType' => 'text',
@@ -148,7 +147,7 @@ $GLOBALS['TL_DCA']['tl_company_testimonial'] = [
             'sql' => "char(1) NOT NULL default ''",
         ],
         'sorting' => [
-            'sql' => "int(10) unsigned NOT NULL default 0",
+            'sql' => 'int(10) unsigned NOT NULL default 0',
         ],
     ],
 ];
