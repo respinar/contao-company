@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="php" original="contao/languages/en/tl_company_project_archive.php" source-language="en">
+    <body>
+      <trans-unit id="tl_company_project_archive.title_legend">
+        <source>Title</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project_archive.redirect_legend">
+        <source>Redirect page</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project_archive.protected_legend">
+        <source>Access protection</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project_archive.title.0">
+        <source>Title</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project_archive.title.1">
+        <source>Please enter the project archive title.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project_archive.overviewPage.0">
+        <source>Overview page</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project_archive.overviewPage.1">
+        <source>Please choose the projects list page which will be used as the return link from the project detail page.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project_archive.jumpTo.0">
+        <source>Reader page</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project_archive.jumpTo.1">
+        <source>Please choose the project reader page to which visitors will be redirected when clicking a project.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project_archive.protected.0">
+        <source>Protect archive</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project_archive.protected.1">
+        <source>Show projects to certain member groups only.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project_archive.groups.0">
+        <source>Allowed member groups</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project_archive.groups.1">
+        <source>These groups will be able to see the projects in this archive.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
