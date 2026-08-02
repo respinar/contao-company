@@ -1,0 +1,34 @@
+{% if testimonial %}
+    <article class="testimonial testimonial--reader">
+        <h1>{{ testimonial.title }}</h1>
+
+        {% if testimonial.company %}
+            <p class="testimonial__company">{{ testimonial.company }}</p>
+        {% endif %}
+
+        <p class="testimonial__person">
+            {{ testimonial.personName }}
+            {% if testimonial.position %}
+                <span class="testimonial__position">{{ testimonial.position }}</span>
+            {% endif %}
+        </p>
+
+        {% if testimonial.quote %}
+            <blockquote class="testimonial__quote">
+                {{ testimonial.quote|raw }}
+            </blockquote>
+        {% endif %}
+
+        {% if testimonial.fullText %}
+            <div class="testimonial__fulltext">
+                {{ testimonial.fullText|raw }}
+            </div>
+        {% endif %}
+
+        {% if testimonial.date %}
+            <time datetime="{{ testimonial.date }}">{{ testimonial.date }}</time>
+        {% endif %}
+    </article>
+{% else %}
+    <p class="testimonial-empty">Testimonial not found.</p>
+{% endif %}

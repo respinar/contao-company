@@ -1,0 +1,19 @@
+{% use "@Contao/component/_figure.html.twig" %}
+
+<div class="project-item">
+
+    {% if figure %}
+        {% if link %}<a href="{{ link }}">{% endif %}
+        {% with {figure: figure} %}
+            {{ block('figure_component') }}
+        {% endwith %}
+        {% if link %}</a>{% endif %}
+    {% endif %}
+
+    <h1>{{ title }}</h1>
+
+    {% if hasText %}
+      {{ text|raw }}
+    {% endif %}
+
+</div>

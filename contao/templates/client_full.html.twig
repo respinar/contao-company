@@ -1,0 +1,22 @@
+{% use "@Contao/component/_figure.html.twig" %}
+
+<div class="client-item">
+
+    {% if figure %}
+        {% if link %}<a href="{{ link }}">{% endif %}
+        {% with {figure: figure} %}
+            {{ block('figure_component') }}
+        {% endwith %}
+        {% if link %}</a>{% endif %}
+    {% endif %}
+
+    
+
+    {% if website|default %}
+        <a href="{{ website }}" target="_blank" rel="noopener noreferrer" title="{{ name }}">
+    {% endif %}
+    <span class="client-name">{{ name }}</span>
+    {% if website|default %}
+        </a>
+    {% endif %}
+</div>

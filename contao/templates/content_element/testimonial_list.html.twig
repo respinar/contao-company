@@ -1,0 +1,9 @@
+{% if cards|length > 0 %}
+    <div class="testimonial-list">
+        {% for card in cards %}
+            {{ card|raw }}
+        {% endfor %}
+    </div>
+{% else %}
+    <p class="testimonial-empty">No testimonials found.</p>
+{% endif %}
