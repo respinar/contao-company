@@ -27,9 +27,8 @@ use Symfony\Component\HttpFoundation\Response;
 #[AsContentElement('project_reader', category: 'company')]
 class ProjectReaderController extends AbstractContentElementController
 {
-    public function __construct(
-        private readonly ProjectRenderer $project_renderer,
-    ) {
+    public function __construct(private readonly ProjectRenderer $project_renderer)
+    {
     }
 
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
@@ -42,13 +41,13 @@ class ProjectReaderController extends AbstractContentElementController
 
         $project = ProjectModel::findOneBy('alias', $alias);
 
-        if ($project === null) {
+        if (null === $project) {
             return new Response('');
         }
 
-        $archive = ProjectArchiveModel::findByPk($project->pid);
+        $archive = ProjectArchiveModel::findById($project->pid);
 
-        if ($archive === null) {
+        if (null === $archive) {
             return new Response('');
         }
 
