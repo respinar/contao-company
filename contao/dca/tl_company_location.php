@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 use Contao\DataContainer;
 use Contao\DC_Table;
+use Doctrine\DBAL\Platforms\AbstractMySQLPlatform;
 
 $GLOBALS['TL_DCA']['tl_company_location'] = [
     'config' => [
@@ -43,16 +44,16 @@ $GLOBALS['TL_DCA']['tl_company_location'] = [
 
     'fields' => [
         'id' => [
-            'sql' => 'int(10) unsigned NOT NULL auto_increment',
+            'sql' => ['type' => 'integer', 'unsigned' => true, 'autoincrement' => true],
         ],
         'pid' => [
-            'sql' => 'int(10) unsigned NOT NULL default 0',
+            'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
         ],
         'sorting' => [
-            'sql' => 'int(10) unsigned NOT NULL default 0',
+            'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
         ],
         'tstamp' => [
-            'sql' => 'int(10) unsigned NOT NULL default 0',
+            'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
         ],
         'title' => [
             'inputType' => 'text',
@@ -70,7 +71,7 @@ $GLOBALS['TL_DCA']['tl_company_location'] = [
             'inputType' => 'textarea',
             'search' => true,
             'eval' => ['rte' => 'tinyMCE', 'tl_class' => 'clr'],
-            'sql' => 'text NULL',
+            'sql' => ['type' => 'text', 'length' => AbstractMySQLPlatform::LENGTH_LIMIT_TEXT, 'notnull' => false],
         ],
     ],
 ];
