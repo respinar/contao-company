@@ -10,25 +10,24 @@ declare(strict_types=1);
  * @license MIT
  */
 
-use Respinar\CompanyBundle\Model\CompanyCategoryModel;
-use Respinar\CompanyBundle\Model\CompanyLocationModel;
 use Respinar\CompanyBundle\Model\ClientGroupModel;
 use Respinar\CompanyBundle\Model\ClientModel;
+use Respinar\CompanyBundle\Model\CompanyCategoryModel;
+use Respinar\CompanyBundle\Model\CompanyLocationModel;
 use Respinar\CompanyBundle\Model\ProjectArchiveModel;
 use Respinar\CompanyBundle\Model\ProjectModel;
 use Respinar\CompanyBundle\Model\TestimonialArchiveModel;
 use Respinar\CompanyBundle\Model\TestimonialModel;
-
 
 $GLOBALS['BE_MOD']['company'] = [
     'clients' => [
         'tables' => ['tl_company_client_group', 'tl_company_client'],
     ],
     'projects' => [
-        'tables' => ['tl_company_project_archive','tl_company_project'],
+        'tables' => ['tl_company_project_archive', 'tl_company_project'],
     ],
     'testimonials' => [
-        'tables' => ['tl_company_testimonial_archive','tl_company_testimonial'],
+        'tables' => ['tl_company_testimonial_archive', 'tl_company_testimonial'],
     ],
     'category' => [
         'tables' => ['tl_company_category'],
