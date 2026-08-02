@@ -12,8 +12,8 @@ declare(strict_types=1);
 
 namespace Respinar\CompanyBundle\Renderer;
 
-use Contao\ContentModel;
 use Contao\Config;
+use Contao\ContentModel;
 use Contao\Date;
 use Contao\FrontendTemplate;
 use Respinar\CompanyBundle\Model\TestimonialModel;
