@@ -16,17 +16,16 @@ use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
 use Contao\CoreBundle\Twig\FragmentTemplate;
-use Respinar\CompanyBundle\Renderer\ClientRenderer;
 use Respinar\CompanyBundle\Model\ClientModel;
+use Respinar\CompanyBundle\Renderer\ClientRenderer;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 #[AsContentElement('client_list', category: 'company')]
 class ClientListController extends AbstractContentElementController
 {
-    public function __construct(
-        private readonly ClientRenderer $clientRenderer,
-    ) {
+    public function __construct(private readonly ClientRenderer $clientRenderer)
+    {
     }
 
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
@@ -39,7 +38,7 @@ class ClientListController extends AbstractContentElementController
 
         $clientCollection = ClientModel::findPublishedByPid($model->clientGroup);
 
-        if ($clientCollection !== null) {
+        if (null !== $clientCollection) {
             foreach ($clientCollection as $client) {
                 $clients[] = $this->clientRenderer->render($client, $model);
             }
