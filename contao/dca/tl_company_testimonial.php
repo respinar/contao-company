@@ -23,7 +23,7 @@ $GLOBALS['TL_DCA']['tl_company_testimonial'] = [
                 'id' => 'primary',
                 'tstamp' => 'index',
                 'alias' => 'index',
-                'pid,published,featured,start,stop' => 'index',
+                'pid,published,featured' => 'index',
             ],
         ],
     ],
