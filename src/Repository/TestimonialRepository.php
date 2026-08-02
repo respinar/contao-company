@@ -20,41 +20,39 @@ class TestimonialRepository
     /**
      * Finds published records.
      *
-     * @param list<int>    $archiveIds
-     * @param list<int>    $categoryIds
+     * @param list<int>                     $archiveIds
+     * @param list<int>                     $categoryIds
      * @param 'all'|'featured'|'unfeatured' $featured
-     * @param string       $order
-     * @param int|null     $limit
      *
      * @return array<int, array<string, mixed>>
      */
-    public function findPublished(array $archiveIds = [], array $categoryIds = [], string $featured = 'all', string $order = 'sorting_asc', ?int $limit = null): array
+    public function findPublished(array $archiveIds = [], array $categoryIds = [], string $featured = 'all', string $order = 'sorting_asc', int|null $limit = null): array
     {
         $options = [
             'column' => ['published = ?'],
-            'value'  => ['1'],
-            'order'  => $this->resolveOrder($order),
+            'value' => ['1'],
+            'order' => $this->resolveOrder($order),
         ];
 
         if (!empty($archiveIds)) {
-            $placeholders = implode(',', array_fill(0, count($archiveIds), '?'));
+            $placeholders = implode(',', array_fill(0, \count($archiveIds), '?'));
             $options['column'][] = "pid IN ($placeholders)";
             array_push($options['value'], ...$archiveIds);
         }
 
-        if ($featured !== 'all') {
+        if ('all' !== $featured) {
             $options['column'][] = 'featured = ?';
-            $options['value'][] = $featured === 'featured' ? '1' : '';
+            $options['value'][] = 'featured' === $featured ? '1' : '';
         }
 
-        if ($limit !== null && $limit > 0) {
+        if (null !== $limit && $limit > 0) {
             $options['limit'] = $limit;
         }
 
         $collection = TestimonialModel::findAll($options);
 
         $items = [];
-        if ($collection !== null) {
+        if (null !== $collection) {
             while ($collection->next()) {
                 $items[] = $collection->current()->row();
             }
@@ -66,8 +64,8 @@ class TestimonialRepository
                 static function (array $item) use ($categoryIds): bool {
                     $itemCategories = StringUtil::deserialize($item['categories'] ?? '', true);
 
-                    return count(array_intersect($itemCategories, $categoryIds)) > 0;
-                }
+                    return \count(array_intersect($itemCategories, $categoryIds)) > 0;
+                },
             ));
         }
 
@@ -77,15 +75,15 @@ class TestimonialRepository
     /**
      * @return array<string, mixed>|null
      */
-    public function findByAlias(string $alias): ?array
+    public function findByAlias(string $alias): array|null
     {
-        if ($alias === '') {
+        if ('' === $alias) {
             return null;
         }
 
         $testimonial = TestimonialModel::findOneBy('alias', $alias);
 
-        if ($testimonial === null || !$testimonial->published) {
+        if (null === $testimonial || !$testimonial->published) {
             return null;
         }
 
@@ -96,10 +94,10 @@ class TestimonialRepository
     {
         return match ($order) {
             'sorting_desc' => 'sorting DESC',
-            'date_asc'     => 'date ASC',
-            'date_desc'    => 'date DESC',
-            'random'       => 'RAND()',
-            default        => 'sorting ASC',
+            'date_asc' => 'date ASC',
+            'date_desc' => 'date DESC',
+            'random' => 'RAND()',
+            default => 'sorting ASC',
         };
     }
 }
