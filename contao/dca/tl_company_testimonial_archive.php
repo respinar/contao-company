@@ -15,12 +15,12 @@ use Contao\DC_Table;
 
 $GLOBALS['TL_DCA']['tl_company_testimonial_archive'] = [
     'config' => [
-        'dataContainer'    => DC_Table::class,
-        'ctable'           => ['tl_company_testimonial'],
-        'switchToEdit'     => true,
+        'dataContainer' => DC_Table::class,
+        'ctable' => ['tl_company_testimonial'],
+        'switchToEdit' => true,
         'enableVersioning' => true,
-        'markAsCopy'       => 'title',
-        'userRoot'         => 'testimonials',
+        'markAsCopy' => 'title',
+        'userRoot' => 'testimonials',
         'sql' => [
             'keys' => [
                 'id' => 'primary',
@@ -31,9 +31,9 @@ $GLOBALS['TL_DCA']['tl_company_testimonial_archive'] = [
 
     'list' => [
         'sorting' => [
-            'mode'        => DataContainer::MODE_SORTED,
-            'fields'      => ['title'],
-            'flag'        => DataContainer::SORT_INITIAL_LETTER_ASC,
+            'mode' => DataContainer::MODE_SORTED,
+            'fields' => ['title'],
+            'flag' => DataContainer::SORT_INITIAL_LETTER_ASC,
             'panelLayout' => 'search,filter,limit',
         ],
         'label' => [
@@ -44,7 +44,7 @@ $GLOBALS['TL_DCA']['tl_company_testimonial_archive'] = [
 
     'palettes' => [
         '__selector__' => ['protected'],
-        'default'      => '{title_legend},title,alias,jumpTo;{protected_legend:hide},protected',
+        'default' => '{title_legend},title,alias,jumpTo;{protected_legend:hide},protected',
     ],
 
     'sub-palettes' => [
@@ -53,42 +53,42 @@ $GLOBALS['TL_DCA']['tl_company_testimonial_archive'] = [
 
     'fields' => [
         'id' => [
-            'sql' => "int(10) unsigned NOT NULL auto_increment",
+            'sql' => 'int(10) unsigned NOT NULL auto_increment',
         ],
         'tstamp' => [
-            'sql' => "int(10) unsigned NOT NULL default 0",
+            'sql' => 'int(10) unsigned NOT NULL default 0',
         ],
         'title' => [
-            'search'    => true,
+            'search' => true,
             'inputType' => 'text',
-            'eval'      => ['mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
-            'sql'       => "varchar(255) NOT NULL default ''",
+            'eval' => ['mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
+            'sql' => "varchar(255) NOT NULL default ''",
         ],
         'alias' => [
-            'search'    => true,
+            'search' => true,
             'inputType' => 'text',
-            'eval'      => ['rgxp' => 'alias', 'doNotCopy' => true, 'unique' => true, 'maxlength' => 128, 'tl_class' => 'w50'],
-            'sql'       => "varchar(128) NOT NULL default ''",
+            'eval' => ['rgxp' => 'alias', 'doNotCopy' => true, 'unique' => true, 'maxlength' => 128, 'tl_class' => 'w50'],
+            'sql' => "varchar(128) NOT NULL default ''",
         ],
         'jumpTo' => [
-            'inputType'  => 'pageTree',
+            'inputType' => 'pageTree',
             'foreignKey' => 'tl_page.title',
-            'eval'       => ['mandatory' => true, 'fieldType' => 'radio', 'tl_class' => 'clr'],
-            'sql'        => "int(10) unsigned NOT NULL default 0",
-            'relation'   => ['type' => 'hasOne', 'load' => 'lazy'],
+            'eval' => ['mandatory' => true, 'fieldType' => 'radio', 'tl_class' => 'clr'],
+            'sql' => 'int(10) unsigned NOT NULL default 0',
+            'relation' => ['type' => 'hasOne', 'load' => 'lazy'],
         ],
         'protected' => [
-            'filter'    => true,
+            'filter' => true,
             'inputType' => 'checkbox',
-            'eval'      => ['submitOnChange' => true],
-            'sql'       => ["type" => 'boolean', "default" => false],
+            'eval' => ['submitOnChange' => true],
+            'sql' => ['type' => 'boolean', 'default' => false],
         ],
         'groups' => [
-            'inputType'  => 'checkbox',
+            'inputType' => 'checkbox',
             'foreignKey' => 'tl_member_group.name',
-            'eval'       => ['mandatory' => true, 'multiple' => true],
-            'sql'        => 'blob NULL',
-            'relation'   => ['type' => 'hasMany', 'load' => 'lazy'],
+            'eval' => ['mandatory' => true, 'multiple' => true],
+            'sql' => 'blob NULL',
+            'relation' => ['type' => 'hasMany', 'load' => 'lazy'],
         ],
     ],
 ];
