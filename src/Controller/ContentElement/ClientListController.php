@@ -36,7 +36,7 @@ class ClientListController extends AbstractContentElementController
             return $template->getResponse('');
         }
 
-        $clientCollection = ClientModel::findPublishedByPid($model->clientGroup);
+        $clientCollection = ClientModel::findPublishedByPid($model->clientGroup, $model->numberOfItems);
 
         if (null !== $clientCollection) {
             foreach ($clientCollection as $client) {
