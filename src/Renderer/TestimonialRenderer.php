@@ -20,13 +20,13 @@ use Respinar\CompanyBundle\Model\TestimonialModel;
 
 final class TestimonialRenderer
 {
-    public function renderTestimonial(TestimonialModel|array $testimonial, ContentModel $model): string
+    public function renderTestimonial(TestimonialModel $testimonial, ContentModel $model): string
     {
         $template = new FrontendTemplate(
             $model->testimonial_template ?: 'testimonial_short',
         );
 
-        $template->setData($testimonial);
+        $template->setData($testimonial->row());
 
         $class = 'testimonial';
 
