@@ -1,9 +1,11 @@
-{% if cards|length > 0 %}
-    <div class="testimonial-list">
-        {% for card in cards %}
-            {{ card|raw }}
-        {% endfor %}
+{% extends "@Contao/content_element/_base.html.twig" %}
+
+{% block content %}
+    <div class="testimonial-list {{ data.testimonial_listClass }}">
+    {% if testimonials|length > 0 %}
+        {{ testimonials|join|raw }}
+    {% else %}
+        <p class="testimonial-empty">No testimonials found.</p>
+    {% endif %}
     </div>
-{% else %}
-    <p class="testimonial-empty">No testimonials found.</p>
-{% endif %}
+{% endblock %}
