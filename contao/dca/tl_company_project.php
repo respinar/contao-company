@@ -55,7 +55,12 @@ $GLOBALS['TL_DCA']['tl_company_project'] =
             'copy',
             'cut',
             'delete',
-            'toggle',
+            'toggle' => [
+                'href' => 'act=toggle&field=published',
+                'icon' => 'toggle.svg',
+                'primary' => true,
+                'showInHeader' => true
+            ],
             'feature' => [
                 'href' => 'act=toggle&field=featured',
                 'icon' => 'featured.svg',
