@@ -30,14 +30,14 @@ final class TestimonialRenderer
 
         $class = 'testimonial';
 
-        if (!empty($testimonial['featured'])) {
+        if (!empty($testimonial->featured)) {
             $class .= ' featured';
         }
 
         $template->class = trim($class);
 
-        $template->dateFormatted = !empty($testimonial['date'])
-            ? Date::parse(Config::get('dateFormat'), (int) $testimonial['date'])
+        $template->dateFormatted = !empty($testimonial->date)
+            ? Date::parse(Config::get('dateFormat'), (int) $testimonial->date)
             : '';
 
         return $template->parse();
