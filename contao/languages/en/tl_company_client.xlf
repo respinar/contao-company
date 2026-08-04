@@ -1,176 +1,176 @@
-<?xml version="1.0" ?>
-<xliff version="1.0">
-  <file identifier="en/tl_company_client">
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1" xmlns="urn:oasis:names:tc:xliff:document:1.1">
+  <file datatype="php" original="contao/languages/en/tl_company_client.php" source-language="en">
     <body>
-      <trans-unit id="title_legend">
+      <trans-unit id="tl_company_client.title_legend">
         <source>Name and alias</source>
         <target>Name and alias</target>
       </trans-unit>
-      <trans-unit id="logo_legend">
+      <trans-unit id="tl_company_client.logo_legend">
         <source>Logo</source>
         <target>Logo</target>
       </trans-unit>
-      <trans-unit id="details_legend">
+      <trans-unit id="tl_company_client.details_legend">
         <source>Details</source>
         <target>Details</target>
       </trans-unit>
-      <trans-unit id="category_legend">
+      <trans-unit id="tl_company_client.category_legend">
         <source>Categories</source>
         <target>Categories</target>
       </trans-unit>
-      <trans-unit id="publish_legend">
+      <trans-unit id="tl_company_client.publish_legend">
         <source>Publish settings</source>
         <target>Publish settings</target>
       </trans-unit>
-      <trans-unit id="pid_0">
+      <trans-unit id="tl_company_client.pid.0">
         <source>Group</source>
         <target>Group</target>
       </trans-unit>
-      <trans-unit id="pid_1">
+      <trans-unit id="tl_company_client.pid.1">
         <source>The client group this client belongs to.</source>
         <target>The client group this client belongs to.</target>
       </trans-unit>
-      <trans-unit id="name_0">
+      <trans-unit id="tl_company_client.name.0">
         <source>Name</source>
         <target>Name</target>
       </trans-unit>
-      <trans-unit id="name_1">
+      <trans-unit id="tl_company_client.name.1">
         <source>Please enter the client/company name.</source>
         <target>Please enter the client/company name.</target>
       </trans-unit>
-      <trans-unit id="alias_0">
+      <trans-unit id="tl_company_client.alias.0">
         <source>Alias</source>
         <target>Alias</target>
       </trans-unit>
-      <trans-unit id="alias_1">
+      <trans-unit id="tl_company_client.alias.1">
         <source>The alias is a unique reference that can be used instead of the numeric ID.</source>
         <target>The alias is a unique reference that can be used instead of the numeric ID.</target>
       </trans-unit>
-      <trans-unit id="logo_0">
+      <trans-unit id="tl_company_client.featured.0">
+        <source>Featured</source>
+        <target>Featured</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.featured.1">
+        <source>Mark the client as featured.</source>
+        <target>Mark the client as featured.</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.logo.0">
         <source>Logo</source>
         <target>Logo</target>
       </trans-unit>
-      <trans-unit id="logo_1">
+      <trans-unit id="tl_company_client.logo.1">
         <source>Please select a client logo.</source>
         <target>Please select a client logo.</target>
       </trans-unit>
-      <trans-unit id="website_0">
+      <trans-unit id="tl_company_client.website.0">
         <source>Website</source>
         <target>Website</target>
       </trans-unit>
-      <trans-unit id="website_1">
+      <trans-unit id="tl_company_client.website.1">
         <source>Please enter an external website URL.</source>
         <target>Please enter an external website URL.</target>
       </trans-unit>
-      <trans-unit id="description_0">
+      <trans-unit id="tl_company_client.description.0">
         <source>Description</source>
         <target>Description</target>
       </trans-unit>
-      <trans-unit id="description_1">
+      <trans-unit id="tl_company_client.description.1">
         <source>Please enter a description for this client.</source>
         <target>Please enter a description for this client.</target>
       </trans-unit>
-      <trans-unit id="industry_0">
-        <source>Industry</source>
-        <target>Industry</target>
-      </trans-unit>
-      <trans-unit id="industry_1">
-        <source>Please enter the industry this client operates in.</source>
-        <target>Please enter the industry this client operates in.</target>
-      </trans-unit>
-      <trans-unit id="location_0">
+      <trans-unit id="tl_company_client.location.0">
         <source>Location</source>
         <target>Location</target>
       </trans-unit>
-      <trans-unit id="location_1">
-        <source>Please enter the client location.</source>
-        <target>Please enter the client location.</target>
+      <trans-unit id="tl_company_client.location.1">
+        <source>Please select a location.</source>
+        <target>Please select a location.</target>
       </trans-unit>
-      <trans-unit id="categories_0">
+      <trans-unit id="tl_company_client.categories.0">
         <source>Categories</source>
         <target>Categories</target>
       </trans-unit>
-      <trans-unit id="categories_1">
+      <trans-unit id="tl_company_client.categories.1">
         <source>Please select one or more categories.</source>
         <target>Please select one or more categories.</target>
       </trans-unit>
-      <trans-unit id="published_0">
+      <trans-unit id="tl_company_client.published.0">
         <source>Publish client</source>
         <target>Publish client</target>
       </trans-unit>
-      <trans-unit id="published_1">
+      <trans-unit id="tl_company_client.published.1">
         <source>Make the client visible on the website.</source>
         <target>Make the client visible on the website.</target>
       </trans-unit>
-      <trans-unit id="start_0">
+      <trans-unit id="tl_company_client.start.0">
         <source>Show from</source>
         <target>Show from</target>
       </trans-unit>
-      <trans-unit id="start_1">
+      <trans-unit id="tl_company_client.start.1">
         <source>Do not show the client on the website before this date.</source>
         <target>Do not show the client on the website before this date.</target>
       </trans-unit>
-      <trans-unit id="stop_0">
+      <trans-unit id="tl_company_client.stop.0">
         <source>Show until</source>
         <target>Show until</target>
       </trans-unit>
-      <trans-unit id="stop_1">
+      <trans-unit id="tl_company_client.stop.1">
         <source>Do not show the client on the website after this date.</source>
         <target>Do not show the client on the website after this date.</target>
       </trans-unit>
-      <trans-unit id="new_0">
+      <trans-unit id="tl_company_client.new.0">
         <source>New client</source>
         <target>New client</target>
       </trans-unit>
-      <trans-unit id="new_1">
+      <trans-unit id="tl_company_client.new.1">
         <source>Create a new client</source>
         <target>Create a new client</target>
       </trans-unit>
-      <trans-unit id="edit_0">
+      <trans-unit id="tl_company_client.edit.0">
         <source>Edit client</source>
         <target>Edit client</target>
       </trans-unit>
-      <trans-unit id="edit_1">
+      <trans-unit id="tl_company_client.edit.1">
         <source>Edit client ID %s</source>
         <target>Edit client ID %s</target>
       </trans-unit>
-      <trans-unit id="copy_0">
+      <trans-unit id="tl_company_client.copy.0">
         <source>Duplicate client</source>
         <target>Duplicate client</target>
       </trans-unit>
-      <trans-unit id="copy_1">
+      <trans-unit id="tl_company_client.copy.1">
         <source>Duplicate client ID %s</source>
         <target>Duplicate client ID %s</target>
       </trans-unit>
-      <trans-unit id="delete_0">
+      <trans-unit id="tl_company_client.delete.0">
         <source>Delete client</source>
         <target>Delete client</target>
       </trans-unit>
-      <trans-unit id="delete_1">
+      <trans-unit id="tl_company_client.delete.1">
         <source>Delete client ID %s</source>
         <target>Delete client ID %s</target>
       </trans-unit>
-      <trans-unit id="show_0">
+      <trans-unit id="tl_company_client.show.0">
         <source>Client details</source>
         <target>Client details</target>
       </trans-unit>
-      <trans-unit id="show_1">
+      <trans-unit id="tl_company_client.show.1">
         <source>Show details of client ID %s</source>
         <target>Show details of client ID %s</target>
       </trans-unit>
-      <trans-unit id="toggle_0">
+      <trans-unit id="tl_company_client.toggle.0">
         <source>Publish/unpublish client</source>
         <target>Publish/unpublish client</target>
       </trans-unit>
-      <trans-unit id="toggle_1">
+      <trans-unit id="tl_company_client.toggle.1">
         <source>Publish/unpublish client ID %s</source>
         <target>Publish/unpublish client ID %s</target>
       </trans-unit>
-      <trans-unit id="all_0">
+      <trans-unit id="tl_company_client.all.0">
         <source>Edit multiple</source>
         <target>Edit multiple</target>
       </trans-unit>
-      <trans-unit id="all_1">
+      <trans-unit id="tl_company_client.all.1">
         <source>Edit multiple clients at once</source>
         <target>Edit multiple clients at once</target>
       </trans-unit>
