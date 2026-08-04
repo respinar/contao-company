@@ -14,14 +14,18 @@ namespace Respinar\CompanyBundle\Renderer;
 
 use Contao\ContentModel;
 use Contao\CoreBundle\Image\Studio\Studio;
+use Contao\CoreBundle\Routing\ContentUrlGenerator;
 use Contao\FrontendTemplate;
 use Contao\StringUtil;
 use Respinar\CompanyBundle\Model\ClientModel;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 final class ClientRenderer
 {
-    public function __construct(private readonly Studio $studio)
-    {
+    public function __construct(
+        private readonly Studio $studio,
+        private readonly ContentUrlGenerator $contentUrlGenerator,
+    ) {
     }
 
     /**
@@ -62,6 +66,8 @@ final class ClientRenderer
 
             $template->figure = $figure;
         }
+
+        $template->link = $this->contentUrlGenerator->generate($client, [], UrlGeneratorInterface::ABSOLUTE_PATH);
 
         return $template->parse();
     }
