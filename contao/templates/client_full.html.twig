@@ -1,6 +1,6 @@
 {% use "@Contao/component/_figure.html.twig" %}
 
-<div class="client-item">
+<div class="client-detail">
 
     {% if figure %}
         {% if link %}<a href="{{ link }}">{% endif %}
@@ -10,13 +10,15 @@
         {% if link %}</a>{% endif %}
     {% endif %}
 
-
-
     {% if website|default %}
         <a href="{{ website }}" target="_blank" rel="noopener noreferrer" title="{{ name }}">
     {% endif %}
     <span class="client-name">{{ name }}</span>
     {% if website|default %}
         </a>
+    {% endif %}
+
+    {% if description|default %}
+        <div class="client-description">{{ description|raw }}</div>
     {% endif %}
 </div>

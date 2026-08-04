@@ -61,7 +61,7 @@ $GLOBALS['TL_DCA']['tl_user_group']['fields']['testimonials'] =
 [
     'label' => &$GLOBALS['TL_LANG']['tl_user']['testimonials'],
     'inputType' => 'checkbox',
-    'foreignKey' => 'tl_company_testimonials_archive.title',
+    'foreignKey' => 'tl_company_testimonial_archive.title',
     'eval' => ['multiple' => true],
     'sql' => ['type' => 'blob', 'length' => AbstractMySQLPlatform::LENGTH_LIMIT_BLOB, 'notnull' => false],
     'relation' => ['type' => 'hasMany', 'load' => 'lazy'],

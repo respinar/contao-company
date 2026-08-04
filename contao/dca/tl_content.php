@@ -11,6 +11,7 @@ declare(strict_types=1);
  */
 
 use Contao\Controller;
+use Contao\CoreBundle\Image\ImageSizes;
 
 /*
  * Content elements
@@ -18,11 +19,11 @@ use Contao\Controller;
 
 // Clients Palettes
 $GLOBALS['TL_DCA']['tl_content']['palettes']['client_list'] = '{type_legend},type,headline;{client_legend},clientGroup;{template_legend:hide},customTpl,client_listClass,client_template,numberOfItems;{image_legend},size;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
-$GLOBALS['TL_DCA']['tl_content']['palettes']['client_detail'] = '{type_legend},type,headline;{template_legend:hide},customTpl,client_template;{image_legend},size;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['client_detail'] = '{type_legend},type,headline;{template_legend:hide},customTpl,client_template;{image_legend},size;{project_legend},project_template,project_listClass,project_imgSize;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
 
 // Projects Palettes
 $GLOBALS['TL_DCA']['tl_content']['palettes']['project_list'] = '{type_legend},type,headline,title;;{project_legend},project_archives;{image_legend},size;{template_legend:hide},customTpl,project_listClass,project_template;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
-$GLOBALS['TL_DCA']['tl_content']['palettes']['project_reader'] = '{type_legend},type,headline,title;;{image_legend},size;{template_legend:hide},customTpl,project_template;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['project_detail'] = '{type_legend},type,headline,title;;{image_legend},size;{template_legend:hide},customTpl,project_template;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
 
 // Testimonials Palettes
 $GLOBALS['TL_DCA']['tl_content']['palettes']['testimonial_list'] = '{type_legend},type,headline;{config_legend},testimonial_archives,testimonial_categories,testimonial_featured,numberOfItems,testimonial_order,testimonial_template,project_listClass;{template_legend:hide},customTpl;{protected_legend:hide},protected;{invisible_legend:hide},invisible,start,stop';
@@ -44,6 +45,24 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['project_listClass'] = [
     'inputType' => 'text',
     'eval' => ['maxlength' => 128, 'tl_class' => 'w50'],
     'sql' => ['type' => 'string', 'length' => 255, 'default' => ''],
+];
+$GLOBALS['TL_DCA']['tl_content']['fields']['project_imgSize'] = [
+    'label'     => &$GLOBALS['TL_LANG']['MSC']['imgSize'],
+    'inputType' => 'imageSize',
+    'reference' => &$GLOBALS['TL_LANG']['MSC'],
+    'eval'      => [
+        'rgxp' => 'natural',
+        'includeBlankOption' => true,
+        'nospace' => true,
+        'helpwizard' => true,
+        'tl_class' => 'w50 clr',
+    ],
+    'sql' => [
+        'type' => 'string',
+        'length' => 128,
+        'default' => '',
+        'platformOptions' => ['collation' => 'ascii_bin'],
+    ],
 ];
 
 // Projects Fields
