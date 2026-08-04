@@ -16,17 +16,16 @@ use Contao\Controller;
  * Content elements
  */
 
- // Clients Palettes
- $GLOBALS['TL_DCA']['tl_content']['palettes']['client_list'] = '{type_legend},type,headline;{client_legend},clientGroup;{template_legend:hide},customTpl,client_listClass,client_template,numberOfItems;{image_legend},size;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
+// Clients Palettes
+$GLOBALS['TL_DCA']['tl_content']['palettes']['client_list'] = '{type_legend},type,headline;{client_legend},clientGroup;{template_legend:hide},customTpl,client_listClass,client_template,numberOfItems;{image_legend},size;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['client_detail'] = '{type_legend},type,headline;{template_legend:hide},customTpl,client_template;{image_legend},size;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
 
 // Projects Palettes
 $GLOBALS['TL_DCA']['tl_content']['palettes']['project_list'] = '{type_legend},type,headline,title;;{project_legend},project_archives;{image_legend},size;{template_legend:hide},customTpl,project_listClass,project_template;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['project_reader'] = '{type_legend},type,headline,title;;{image_legend},size;{template_legend:hide},customTpl,project_template;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
 
 // Testimonials Palettes
-$GLOBALS['TL_DCA']['tl_content']['palettes']['testimonial_list'] = '{type_legend},type,headline;{config_legend},testimonial_archives,testimonial_categories,testimonial_featured,numberOfItems,testimonial_order,testimonial_template;{template_legend:hide},customTpl;{protected_legend:hide},protected;{invisible_legend:hide},invisible,start,stop';
-$GLOBALS['TL_DCA']['tl_content']['palettes']['testimonial_reader'] = '{type_legend},type,headline;{template_legend:hide},customTpl;{protected_legend:hide},protected;{invisible_legend:hide},invisible,start,stop';
-
+$GLOBALS['TL_DCA']['tl_content']['palettes']['testimonial_list'] = '{type_legend},type,headline;{config_legend},testimonial_archives,testimonial_categories,testimonial_featured,numberOfItems,testimonial_order,testimonial_template,project_listClass;{template_legend:hide},customTpl;{protected_legend:hide},protected;{invisible_legend:hide},invisible,start,stop';
 
 // Projects Fields
 $GLOBALS['TL_DCA']['tl_content']['fields']['project_archives'] = [
@@ -61,7 +60,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['testimonial_archives'] = [
     'sql' => 'blob NULL',
 ];
 $GLOBALS['TL_DCA']['tl_content']['fields']['testimonial_categories'] = [
-    'inputType' => 'picker',
+    'inputType' => 'checkbox',
     'foreignKey' => 'tl_company_category.title',
     'eval' => ['multiple' => true, 'tl_class' => 'clr'],
     'sql' => 'blob NULL',
@@ -80,7 +79,6 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['testimonial_order'] = [
     'eval' => ['tl_class' => 'w50'],
     'sql' => "varchar(16) NOT NULL default 'date_desc'",
 ];
-
 
 // Clients Palette
 $GLOBALS['TL_DCA']['tl_content']['fields']['clientGroup'] = [
