@@ -42,7 +42,7 @@ $GLOBALS['TL_DCA']['tl_company_client_group'] = [
 
     'palettes' => [
         '__selector__' => ['protected'],
-        'default' => '{title_legend},title,alias;{protected_legend:hide},protected',
+        'default' => '{title_legend},title;{redirect_legend},overviewPage,jumpTo;{protected_legend:hide},protected',
     ],
 
     'subpalettes' => [
@@ -64,11 +64,19 @@ $GLOBALS['TL_DCA']['tl_company_client_group'] = [
             'eval' => ['mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
             'sql' => "varchar(255) NOT NULL default ''",
         ],
-        'alias' => [
-            'search' => true,
-            'inputType' => 'text',
-            'eval' => ['rgxp' => 'alias', 'doNotCopy' => true, 'maxlength' => 128, 'tl_class' => 'w50'],
-            'sql' => "varchar(128) COLLATE utf8mb4_bin NOT NULL default ''",
+        'overviewPage' => [
+            'inputType' => 'pageTree',
+            'foreignKey' => 'tl_page.title',
+            'eval' => ['mandatory' => true, 'fieldType' => 'radio', 'tl_class' => 'clr'],
+            'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
+            'relation' => ['type' => 'hasOne', 'load' => 'lazy'],
+        ],
+        'jumpTo' => [
+            'inputType' => 'pageTree',
+            'foreignKey' => 'tl_page.title',
+            'eval' => ['mandatory' => true, 'fieldType' => 'radio', 'tl_class' => 'clr'],
+            'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
+            'relation' => ['type' => 'hasOne', 'load' => 'lazy'],
         ],
         'protected' => [
             'filter' => true,
