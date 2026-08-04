@@ -82,7 +82,7 @@ $GLOBALS['TL_DCA']['tl_company_client'] = [
         'alias' => [
             'search' => true,
             'inputType' => 'text',
-            'eval' => ['rgxp' => 'alias', 'doNotCopy' => true, 'maxlength' => 128, 'tl_class' => 'w50'],
+            'eval' => ['mandatory' => true, 'rgxp' => 'alias', 'doNotCopy' => true, 'maxlength' => 128, 'tl_class' => 'w50'],
             'sql' => "varchar(128) COLLATE utf8mb4_bin NOT NULL default ''",
         ],
         'logo' => [
