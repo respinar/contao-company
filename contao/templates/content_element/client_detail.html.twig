@@ -1,0 +1,14 @@
+{% extends "@Contao/content_element/_base.html.twig" %}
+
+{% block content %}
+    {{ client|raw }}
+
+    {% block projects %}
+        <h2>Projects</h2>
+        <div class="project_list {{ data.project_listClass }}">
+            {{ projects|join|raw }}
+        </div>
+    {% endblock %}
+
+
+{% endblock %}
