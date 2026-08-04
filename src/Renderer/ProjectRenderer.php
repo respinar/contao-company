@@ -18,6 +18,7 @@ use Contao\CoreBundle\Image\Studio\Studio;
 use Contao\CoreBundle\Routing\ContentUrlGenerator;
 use Contao\FrontendTemplate;
 use Contao\StringUtil;
+use Respinar\CompanyBundle\Model\ClientModel;
 use Respinar\CompanyBundle\Model\ProjectModel;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
@@ -99,6 +100,15 @@ final class ProjectRenderer
             ;
 
             $template->figure = $figure;
+        }
+
+        if (!empty($project->client)) {
+            $client = ClientModel::findById($project->client);
+            if (null !== $client) {
+                $template->clientName = $client->name;
+
+                $template->clientUrl = $this->contentUrlGenerator->generate($client, [], UrlGeneratorInterface::ABSOLUTE_PATH);
+            }
         }
 
         return $template->parse();
