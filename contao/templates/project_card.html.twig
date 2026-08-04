@@ -9,6 +9,9 @@
         {% endwith %}
         <h3>{{ title }}</h3>
         {% if link %}</a>{% endif %}
+        {% if clientName %}
+          <p><a class="testimonial-client" href="{{ clientUrl }}">{{ clientName }}</a></p>
+        {% endif %}
     {% endif %}
 
 </div>
