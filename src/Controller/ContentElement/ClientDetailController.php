@@ -16,25 +16,30 @@ use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
 use Contao\CoreBundle\Twig\FragmentTemplate;
-use Respinar\CompanyBundle\Repository\TestimonialRepository;
+use Contao\Input;
+use Respinar\CompanyBundle\Model\ClientModel;
+use Respinar\CompanyBundle\Renderer\ClientRenderer;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsContentElement('testimonial_reader', category: 'company')]
-class TestimonialReaderController extends AbstractContentElementController
+#[AsContentElement('client_detail', category: 'company')]
+class ClientDetailController extends AbstractContentElementController
 {
-    public function __construct(private readonly TestimonialRepository $repository)
+    public function __construct(private readonly ClientRenderer $clientRenderer)
     {
     }
 
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
-        $alias = (string) ($request->attributes->get('auto_item') ?? $request->query->get('items'));
+        $alias = Input::get('auto_item');
 
-        $testimonial = $this->repository->findByAlias($alias);
+        if (!$alias) {
+            return new Response('');
+        }
 
-        $template->testimonial = $testimonial;
-        $template->model = $model->row();
+        $client = ClientModel::findOneBy('alias', $alias);
+
+        $template->set('clients', $this->clientRenderer->render($client, $model));
 
         return $template->getResponse();
     }

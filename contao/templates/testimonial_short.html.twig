@@ -1,26 +1,30 @@
-<article class="testimonial testimonial--card">
-    {% if testimonial.quote %}
-        <blockquote class="testimonial__quote">
-            {{ testimonial.quote|raw }}
-        </blockquote>
+<article class="testimonial-card {{ class }}">
+    <div class="quote-icon">&ldquo;</div>
+
+    {% if quote %}
+        <div class="testimonial-text">
+            {{ quote|raw }}
+        </div>
     {% endif %}
 
-    <footer class="testimonial__footer">
-        {% if testimonial.personName %}
-            <cite class="testimonial__person">
-                {{ testimonial.personName }}
-                {% if testimonial.position %}
-                    <span class="testimonial__position">{{ testimonial.position }}</span>
-                {% endif %}
-            </cite>
-        {% endif %}
+    <div class="testimonial-footer">
+        <div class="testimonial-info">
+            {% if personName %}
+                <h4>{{ personName }}</h4>
+            {% endif %}
 
-        {% if testimonial.company %}
-            <p class="testimonial__company">{{ testimonial.company }}</p>
-        {% endif %}
-    </footer>
+            {% if position %}
+                <p>
+                  {{ position }}
+                  {% if clientName %}
+                    - <a class="testimonial-client" href="{{ clientUrl }}">{{ clientName }}</a>
+                  {% endif %}
+                </p>
+            {% endif %}
 
-    {% if testimonial.date %}
-        <time datetime="{{ testimonial.date }}" class="testimonial__date">{{ testimonial.date }}</time>
-    {% endif %}
+            {% if projectTitle %}
+                <a class="testimonial-project" href="{{ projectUrl }}">{{ projectTitle }}</a>
+            {% endif %}
+        </div>
+    </div>
 </article>

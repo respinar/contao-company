@@ -12,6 +12,10 @@
 
     <h1>{{ title }}</h1>
 
+    {% if clientName %}
+      <p><a class="testimonial-client" href="{{ clientUrl }}">{{ clientName }}</a></p>
+    {% endif %}
+
     {% if hasText %}
       {{ text|raw }}
     {% endif %}
