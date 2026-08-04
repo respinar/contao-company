@@ -24,8 +24,8 @@ use Respinar\CompanyBundle\Renderer\ProjectRenderer;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsContentElement('project_reader', category: 'company')]
-class ProjectReaderController extends AbstractContentElementController
+#[AsContentElement('project_detail', category: 'company')]
+class ProjectDetailController extends AbstractContentElementController
 {
     public function __construct(private readonly ProjectRenderer $project_renderer)
     {
