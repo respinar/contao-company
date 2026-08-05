@@ -89,13 +89,13 @@ $GLOBALS['TL_DCA']['tl_company_project'] =
             'sorting' => true,
             'flag' => DataContainer::SORT_INITIAL_LETTER_ASC,
             'inputType' => 'text',
-            'eval' => ['basicEntities' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
+            'eval' => ['mandatory' => true, 'basicEntities' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
             'sql' => ['type' => 'string', 'length' => 255, 'default' => ''],
         ],
         'alias' => [
             'search' => true,
             'inputType' => 'text',
-            'eval' => ['rgxp' => 'alias', 'doNotCopy' => true, 'unique' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
+            'eval' => ['mandatory' => true, 'rgxp' => 'alias', 'doNotCopy' => true, 'unique' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
             'save_callback' => [
                 ['tl_company_project', 'generateAlias'],
             ],
@@ -122,6 +122,7 @@ $GLOBALS['TL_DCA']['tl_company_project'] =
         ],
         'completionDate' => [
             'inputType' => 'text',
+            'default' => time(),
             'eval' => ['rgxp' => 'date', 'datepicker' => true, 'tl_class' => 'w50 wizard'],
             'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
         ],
