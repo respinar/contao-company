@@ -3,17 +3,17 @@
 <div class="client-detail">
 
     {% if figure %}
-        {% if link %}<a href="{{ link }}">{% endif %}
         {% with {figure: figure} %}
             {{ block('figure_component') }}
         {% endwith %}
-        {% if link %}</a>{% endif %}
     {% endif %}
+
+    <h1 class="client-name">{{ name }}</h1>
 
     {% if website|default %}
         <a href="{{ website }}" target="_blank" rel="noopener noreferrer" title="{{ name }}">
     {% endif %}
-    <span class="client-name">{{ name }}</span>
+
     {% if website|default %}
         </a>
     {% endif %}
