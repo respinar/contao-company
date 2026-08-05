@@ -45,7 +45,7 @@ $GLOBALS['TL_DCA']['tl_company_testimonial_archive'] = [
 
     'palettes' => [
         '__selector__' => ['protected'],
-        'default' => '{title_legend},title,alias,jumpTo;{protected_legend:hide},protected',
+        'default' => '{title_legend},title;{redirect_legend},jumpTo,overviewPage;{protected_legend:hide},protected',
     ],
 
     'sub-palettes' => [
@@ -65,16 +65,17 @@ $GLOBALS['TL_DCA']['tl_company_testimonial_archive'] = [
             'eval' => ['mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
             'sql' => ['type' => 'string', 'length' => 255, 'default' => ''],
         ],
-        'alias' => [
-            'search' => true,
-            'inputType' => 'text',
-            'eval' => ['rgxp' => 'alias', 'doNotCopy' => true, 'unique' => true, 'maxlength' => 128, 'tl_class' => 'w50'],
-            'sql' => ['type' => 'string', 'length' => 128, 'default' => ''],
-        ],
         'jumpTo' => [
             'inputType' => 'pageTree',
             'foreignKey' => 'tl_page.title',
             'eval' => ['mandatory' => true, 'fieldType' => 'radio', 'tl_class' => 'clr'],
+            'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
+            'relation' => ['type' => 'hasOne', 'load' => 'lazy'],
+        ],
+        'overviewPage' => [
+            'inputType' => 'pageTree',
+            'foreignKey' => 'tl_page.title',
+            'eval' => ['fieldType' => 'radio', 'tl_class' => 'clr'],
             'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
             'relation' => ['type' => 'hasOne', 'load' => 'lazy'],
         ],
