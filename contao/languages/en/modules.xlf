@@ -11,6 +11,30 @@
       <trans-unit id="MOD.category.1">
         <source>Manage categories for projects, clients, testimonials, etc.</source>
       </trans-unit>
+      <trans-unit id="MOD.clients.0">
+        <source>Clients</source>
+      </trans-unit>
+      <trans-unit id="MOD.clients.1">
+        <source>Manage clients and their details.</source>
+      </trans-unit>
+      <trans-unit id="MOD.projects.0">
+        <source>Projects</source>
+      </trans-unit>
+      <trans-unit id="MOD.projects.1">
+        <source>Manage projects and portfolios.</source>
+      </trans-unit>
+      <trans-unit id="MOD.testimonials.0">
+        <source>Testimonials</source>
+      </trans-unit>
+      <trans-unit id="MOD.testimonials.1">
+        <source>Manage testimonials and references.</source>
+      </trans-unit>
+      <trans-unit id="MOD.location.0">
+        <source>Locations</source>
+      </trans-unit>
+      <trans-unit id="MOD.location.1">
+        <source>Manage company locations.</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

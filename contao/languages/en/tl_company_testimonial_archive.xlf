@@ -38,6 +38,42 @@
       <trans-unit id="tl_company_testimonial_archive.protected_legend">
         <source>Access protection</source>
       </trans-unit>
+      <trans-unit id="tl_company_testimonial_archive.new.0">
+        <source>New archive</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial_archive.new.1">
+        <source>Create a new testimonial archive</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial_archive.edit.0">
+        <source>Edit archive</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial_archive.edit.1">
+        <source>Edit archive ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial_archive.copy.0">
+        <source>Duplicate archive</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial_archive.copy.1">
+        <source>Duplicate archive ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial_archive.delete.0">
+        <source>Delete archive</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial_archive.delete.1">
+        <source>Delete archive ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial_archive.show.0">
+        <source>Archive details</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial_archive.show.1">
+        <source>Show details of archive ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial_archive.all.0">
+        <source>Edit multiple</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial_archive.all.1">
+        <source>Edit multiple archives at once</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

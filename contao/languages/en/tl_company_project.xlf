@@ -122,6 +122,78 @@
       <trans-unit id="tl_company_project.stop.1">
         <source>Do not show the project on the website on and after this day.</source>
       </trans-unit>
+      <trans-unit id="tl_company_project.teaser_legend">
+        <source>Summary</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.image_legend">
+        <source>Image settings</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.location.0">
+        <source>Location</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.location.1">
+        <source>Please select a location.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.new.0">
+        <source>New project</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.new.1">
+        <source>Create a new project</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.edit.0">
+        <source>Edit project</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.edit.1">
+        <source>Edit project ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.copy.0">
+        <source>Duplicate project</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.copy.1">
+        <source>Duplicate project ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.cut.0">
+        <source>Move project</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.cut.1">
+        <source>Move project ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.delete.0">
+        <source>Delete project</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.delete.1">
+        <source>Delete project ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.toggle.0">
+        <source>Publish/unpublish project</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.toggle.1">
+        <source>Publish/unpublish project ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.feature.0">
+        <source>Feature project</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.feature.1">
+        <source>Feature/unfeature project ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.children.0">
+        <source>Edit content</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.children.1">
+        <source>Edit the content elements of project ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.show.0">
+        <source>Project details</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.show.1">
+        <source>Show details of project ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.all.0">
+        <source>Edit multiple</source>
+      </trans-unit>
+      <trans-unit id="tl_company_project.all.1">
+        <source>Edit multiple projects at once</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

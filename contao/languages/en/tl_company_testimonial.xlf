@@ -128,6 +128,66 @@
       <trans-unit id="tl_company_testimonial.publish_legend">
         <source>Publish settings</source>
       </trans-unit>
+      <trans-unit id="tl_company_testimonial.start.0">
+        <source>Show from</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial.start.1">
+        <source>Do not show the testimonial on the website before this date.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial.stop.0">
+        <source>Show until</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial.stop.1">
+        <source>Do not show the testimonial on the website after this date.</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial.new.0">
+        <source>New testimonial</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial.new.1">
+        <source>Create a new testimonial</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial.edit.0">
+        <source>Edit testimonial</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial.edit.1">
+        <source>Edit testimonial ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial.copy.0">
+        <source>Duplicate testimonial</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial.copy.1">
+        <source>Duplicate testimonial ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial.delete.0">
+        <source>Delete testimonial</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial.delete.1">
+        <source>Delete testimonial ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial.toggle.0">
+        <source>Publish/unpublish testimonial</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial.toggle.1">
+        <source>Publish/unpublish testimonial ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial.feature.0">
+        <source>Feature testimonial</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial.feature.1">
+        <source>Feature/unfeature testimonial ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial.show.0">
+        <source>Testimonial details</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial.show.1">
+        <source>Show details of testimonial ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial.all.0">
+        <source>Edit multiple</source>
+      </trans-unit>
+      <trans-unit id="tl_company_testimonial.all.1">
+        <source>Edit multiple testimonials at once</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

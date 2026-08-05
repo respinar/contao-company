@@ -172,7 +172,30 @@
       </trans-unit>
       <trans-unit id="tl_company_client.all.1">
         <source>Edit multiple clients at once</source>
-        <target>Edit multiple clients at once</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.cut.0">
+        <source>Move client</source>
+      </trans-unit>
+      <trans-unit id="tl_company_client.cut.1">
+        <source>Move client ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_client.feature.0">
+        <source>Feature client</source>
+      </trans-unit>
+      <trans-unit id="tl_company_client.feature.1">
+        <source>Feature/unfeature client ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_client.pasteafter.0">
+        <source>Paste after</source>
+      </trans-unit>
+      <trans-unit id="tl_company_client.pasteafter.1">
+        <source>Paste after client ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_company_client.pasteinto.0">
+        <source>Paste into</source>
+      </trans-unit>
+      <trans-unit id="tl_company_client.pasteinto.1">
+        <source>Paste into client ID %s</source>
       </trans-unit>
     </body>
   </file>
