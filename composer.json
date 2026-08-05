@@ -22,6 +22,7 @@
     },
     "require-dev": {
         "contao/manager-plugin": "^2.13",
+        "contao/news-bundle": "^5.7",
         "contao/easy-coding-standard": "^6.14",
         "symplify/easy-coding-standard": "13.2.3"
     },

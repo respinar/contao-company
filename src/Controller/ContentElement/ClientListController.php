@@ -36,7 +36,26 @@ class ClientListController extends AbstractContentElementController
             return $template->getResponse('');
         }
 
-        $clientCollection = ClientModel::findPublishedByPid($model->clientGroup, $model->numberOfItems);
+        $blnFeatured = match ($model->client_featured) {
+            'featured' => true,
+            'unfeatured' => false,
+            default => null,
+        };
+
+        $arrOptions = [];
+
+        if ('featured_first' === $model->client_featured) {
+            $arrOptions['order'] = 'tl_company_client.featured DESC, tl_company_client.sorting ASC';
+        }
+
+        $limit = $model->numberOfItems > 0 ? (int) $model->numberOfItems : 0;
+
+        $clientCollection = ClientModel::findPublishedByPid(
+            $model->clientGroup,
+            $blnFeatured,
+            $limit,
+            $arrOptions,
+        );
 
         if (null !== $clientCollection) {
             foreach ($clientCollection as $client) {
