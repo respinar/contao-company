@@ -45,7 +45,7 @@ $GLOBALS['TL_DCA']['tl_company_client'] = [
                 'href' => 'act=toggle&field=published',
                 'icon' => 'toggle.svg',
                 'primary' => true,
-                'showInHeader' => true
+                'showInHeader' => true,
             ],
             'feature' => [
                 'href' => 'act=toggle&field=featured',
@@ -82,24 +82,24 @@ $GLOBALS['TL_DCA']['tl_company_client'] = [
             'flag' => 1,
             'inputType' => 'text',
             'eval' => ['mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
-            'sql' => "varchar(255) NOT NULL default ''",
+            'sql' => ['type' => 'string', 'length' => 255, 'default' => ''],
         ],
         'alias' => [
             'search' => true,
             'inputType' => 'text',
             'eval' => ['mandatory' => true, 'rgxp' => 'alias', 'doNotCopy' => true, 'maxlength' => 128, 'tl_class' => 'w50'],
-            'sql' => "varchar(128) COLLATE utf8mb4_bin NOT NULL default ''",
+            'sql' => ['type' => 'binary', 'length' => 128, 'default' => ''],
         ],
         'logo' => [
             'inputType' => 'fileTree',
-            'eval' => ['filesOnly' => true, 'fieldType' => 'radio', 'extensions' => 'jpg,jpeg,png,gif,svg,webp', 'tl_class' => 'clr'],
+            'eval' => ['filesOnly' => true, 'fieldType' => 'radio', 'extensions' => '%contao.image.valid_extensions%', 'tl_class' => 'clr'],
             'sql' => ['type' => 'binary', 'length' => 16, 'notnull' => false],
         ],
         'website' => [
             'search' => true,
             'inputType' => 'text',
             'eval' => ['rgxp' => 'url', 'maxlength' => 255, 'tl_class' => 'w50'],
-            'sql' => "varchar(255) NOT NULL default ''",
+            'sql' => ['type' => 'string', 'length' => 255, 'default' => ''],
         ],
         'description' => [
             'search' => true,
@@ -133,17 +133,17 @@ $GLOBALS['TL_DCA']['tl_company_client'] = [
             'filter' => true,
             'inputType' => 'checkbox',
             'eval' => ['doNotCopy' => true],
-            'sql' => "char(1) NOT NULL default ''",
+            'sql' => ['type' => 'boolean', 'default' => false],
         ],
         'start' => [
             'inputType' => 'text',
             'eval' => ['rgxp' => 'datim', 'datepicker' => true, 'tl_class' => 'w50 wizard'],
-            'sql' => "varchar(10) NOT NULL default ''",
+            'sql' => ['type' => 'string', 'length' => 10, 'default' => ''],
         ],
         'stop' => [
             'inputType' => 'text',
             'eval' => ['rgxp' => 'datim', 'datepicker' => true, 'tl_class' => 'w50 wizard'],
-            'sql' => "varchar(10) NOT NULL default ''",
+            'sql' => ['type' => 'string', 'length' => 10, 'default' => ''],
         ],
     ],
 ];

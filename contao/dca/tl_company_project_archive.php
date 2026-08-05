@@ -47,7 +47,7 @@ $GLOBALS['TL_DCA']['tl_company_project_archive'] =
     ],
     'palettes' => [
         '__selector__' => ['protected'],
-        'default' => '{title_legend},title;{redirect_legend},overviewPage,jumpTo;{protected_legend:hide},protected',
+        'default' => '{title_legend},title;{redirect_legend},jumpTo,overviewPage;{protected_legend:hide},protected',
     ],
     'subpalettes' => [
         'protected' => 'groups',
@@ -70,7 +70,7 @@ $GLOBALS['TL_DCA']['tl_company_project_archive'] =
         'overviewPage' => [
             'inputType' => 'pageTree',
             'foreignKey' => 'tl_page.title',
-            'eval' => ['mandatory' => true, 'fieldType' => 'radio', 'tl_class' => 'clr'],
+            'eval' => ['fieldType' => 'radio', 'tl_class' => 'clr'],
             'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
             'relation' => ['type' => 'hasOne', 'load' => 'lazy'],
         ],

@@ -42,7 +42,7 @@ $GLOBALS['TL_DCA']['tl_company_client_group'] = [
 
     'palettes' => [
         '__selector__' => ['protected'],
-        'default' => '{title_legend},title;{redirect_legend},overviewPage,jumpTo;{protected_legend:hide},protected',
+        'default' => '{title_legend},title;{redirect_legend},jumpTo,overviewPage;{protected_legend:hide},protected',
     ],
 
     'subpalettes' => [
@@ -62,12 +62,12 @@ $GLOBALS['TL_DCA']['tl_company_client_group'] = [
             'flag' => 1,
             'inputType' => 'text',
             'eval' => ['mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
-            'sql' => "varchar(255) NOT NULL default ''",
+            'sql' => ['type' => 'string', 'length' => 255, 'default' => ''],
         ],
         'overviewPage' => [
             'inputType' => 'pageTree',
             'foreignKey' => 'tl_page.title',
-            'eval' => ['mandatory' => true, 'fieldType' => 'radio', 'tl_class' => 'clr'],
+            'eval' => ['fieldType' => 'radio', 'tl_class' => 'clr'],
             'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
             'relation' => ['type' => 'hasOne', 'load' => 'lazy'],
         ],
@@ -82,7 +82,7 @@ $GLOBALS['TL_DCA']['tl_company_client_group'] = [
             'filter' => true,
             'inputType' => 'checkbox',
             'eval' => ['submitOnChange' => true],
-            'sql' => "char(1) NOT NULL default ''",
+            'sql' => ['type' => 'boolean', 'default' => false],
         ],
         'groups' => [
             'inputType' => 'checkbox',

@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 use Contao\DataContainer;
 use Contao\DC_Table;
+use Doctrine\DBAL\Platforms\AbstractMySQLPlatform;
 
 $GLOBALS['TL_DCA']['tl_company_testimonial_archive'] = [
     'config' => [
@@ -62,13 +63,13 @@ $GLOBALS['TL_DCA']['tl_company_testimonial_archive'] = [
             'search' => true,
             'inputType' => 'text',
             'eval' => ['mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
-            'sql' => "varchar(255) NOT NULL default ''",
+            'sql' => ['type' => 'string', 'length' => 255, 'default' => ''],
         ],
         'alias' => [
             'search' => true,
             'inputType' => 'text',
             'eval' => ['rgxp' => 'alias', 'doNotCopy' => true, 'unique' => true, 'maxlength' => 128, 'tl_class' => 'w50'],
-            'sql' => "varchar(128) NOT NULL default ''",
+            'sql' => ['type' => 'string', 'length' => 128, 'default' => ''],
         ],
         'jumpTo' => [
             'inputType' => 'pageTree',
@@ -87,7 +88,7 @@ $GLOBALS['TL_DCA']['tl_company_testimonial_archive'] = [
             'inputType' => 'checkbox',
             'foreignKey' => 'tl_member_group.name',
             'eval' => ['mandatory' => true, 'multiple' => true],
-            'sql' => 'blob NULL',
+            'sql' => ['type' => 'blob', 'length' => AbstractMySQLPlatform::LENGTH_LIMIT_BLOB, 'notnull' => false],
             'relation' => ['type' => 'hasMany', 'load' => 'lazy'],
         ],
     ],

@@ -105,7 +105,7 @@ $GLOBALS['TL_DCA']['tl_company_testimonial'] = [
         ],
         'letterImage' => [
             'inputType' => 'fileTree',
-            'eval' => ['filesOnly' => true, 'fieldType' => 'radio', 'extensions' => 'jpg,jpeg,png,gif,svg', 'tl_class' => 'clr'],
+            'eval' => ['filesOnly' => true, 'fieldType' => 'radio', 'extensions' => '%contao.image.valid_extensions%', 'tl_class' => 'clr'],
             'sql' => ['type' => 'binary', 'length' => 16, 'notnull' => false],
         ],
         'pdf' => [

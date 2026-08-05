@@ -81,13 +81,13 @@ $GLOBALS['TL_DCA']['tl_company_category'] = [
             'inputType' => 'text',
             'search' => true,
             'eval' => ['mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
-            'sql' => "varchar(255) NOT NULL default ''",
+            'sql' => ['type' => 'string', 'length' => 255, 'default' => ''],
         ],
         'alias' => [
             'inputType' => 'text',
             'search' => true,
             'eval' => ['rgxp' => 'alias', 'doNotCopy' => true, 'maxlength' => 128, 'tl_class' => 'w50'],
-            'sql' => "varchar(128) BINARY NOT NULL default ''",
+            'sql' => ['type' => 'binary', 'length' => 128, 'default' => ''],
         ],
         'description' => [
             'inputType' => 'textarea',
