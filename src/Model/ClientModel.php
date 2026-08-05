@@ -49,4 +49,26 @@ class ClientModel extends Model
 
         return static::findBy($arrColumns, [$intId], $arrOptions);
     }
+
+
+    /**
+     * Find published product items by their parent ID and ID or alias.
+     *
+     * @param mixed $varId      The numeric ID or alias name
+     * @param array $arrOptions An optional options array
+     *
+     * @return ClientModel|null The ClientModel or null if there are no client
+     */
+    public static function findPublishedByIdOrAlias(mixed $varId, array $arrOptions = []): ClientModel|null
+    {
+        $t = static::$strTable;
+        $arrColumns = ["($t.id=? OR $t.alias=?)"];
+
+        if (!static::isPreviewMode($arrOptions)) {
+            $time = time();
+            $arrColumns[] = "($t.start='' OR $t.start<$time) AND ($t.stop='' OR $t.stop>$time) AND $t.published=1";
+        }
+
+        return static::findOneBy($arrColumns, [is_numeric($varId) ? $varId : 0, $varId], $arrOptions);
+    }
 }
