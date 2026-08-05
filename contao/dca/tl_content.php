@@ -17,11 +17,11 @@ use Contao\Controller;
  */
 
 // Clients Palettes
-$GLOBALS['TL_DCA']['tl_content']['palettes']['client_list'] = '{type_legend},type,headline;{client_legend},clientGroup;{template_legend:hide},customTpl,client_listClass,client_template,numberOfItems;{image_legend},size;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['client_list'] = '{type_legend},type,headline;{client_legend},clientGroup;{template_legend:hide},customTpl,client_listClass,client_template,client_featured,numberOfItems;{image_legend},size;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['client_detail'] = '{type_legend},type,headline;{template_legend:hide},customTpl,client_template;{image_legend},size;{project_legend},project_template,project_listClass,project_imgSize;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
 
 // Projects Palettes
-$GLOBALS['TL_DCA']['tl_content']['palettes']['project_list'] = '{type_legend},type,headline,title;;{project_legend},project_archives;{image_legend},size;{template_legend:hide},customTpl,project_listClass,project_template;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['project_list'] = '{type_legend},type,headline,title;;{project_legend},project_archives;{image_legend},size;{template_legend:hide},customTpl,project_listClass,project_featured,project_template;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['project_detail'] = '{type_legend},type,headline,title;;{image_legend},size;{template_legend:hide},customTpl,project_template;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
 
 // Testimonials Palettes
@@ -49,20 +49,15 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['project_imgSize'] = [
     'label' => &$GLOBALS['TL_LANG']['MSC']['imgSize'],
     'inputType' => 'imageSize',
     'reference' => &$GLOBALS['TL_LANG']['MSC'],
-    'eval' => [
-        'rgxp' => 'natural',
-        'includeBlankOption' => true,
-        'nospace' => true,
-        'helpwizard' => true,
-        'tl_class' => 'w50 clr',
-    ],
-
-    'sql' => [
-        'type' => 'string',
-        'length' => 128,
-        'default' => '',
-        'platformOptions' => ['collation' => 'ascii_bin'],
-    ],
+    'eval' => [        'rgxp' => 'natural',        'includeBlankOption' => true,        'nospace' => true,        'helpwizard' => true,        'tl_class' => 'w50 clr',    ],
+    'sql' => [        'type' => 'string',        'length' => 128,        'default' => '',        'platformOptions' => ['collation' => 'ascii_bin'],    ],
+];
+$GLOBALS['TL_DCA']['tl_content']['fields']['project_featured'] = [
+    'inputType' => 'select',
+    'options' => ['all_items', 'featured', 'unfeatured', 'featured_first'],
+    'reference' => &$GLOBALS['TL_LANG']['tl_content'],
+    'eval' => ['tl_class' => 'w50 clr'],
+    'sql' => ['type' => 'string', 'length' => 16, 'default' => 'all_items', 'platformOptions' => ['collation' => 'ascii_bin']],
 ];
 
 // Projects Fields
@@ -86,7 +81,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['testimonial_categories'] = [
 ];
 $GLOBALS['TL_DCA']['tl_content']['fields']['testimonial_featured'] = [
     'inputType' => 'select',
-    'options' => ['all', 'featured', 'unfeatured'],
+    'options' => ['all', 'featured', 'unfeatured', 'featured_first'],
     'reference' => &$GLOBALS['TL_LANG']['tl_content']['testimonial_featured_options'],
     'eval' => ['tl_class' => 'w50'],
     'sql' => ['type' => 'string', 'length' => 16, 'default' => 'all'],
@@ -117,4 +112,11 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['client_listClass'] = [
     'inputType' => 'text',
     'eval' => ['maxlength' => 128, 'tl_class' => 'w50'],
     'sql' => ['type' => 'string', 'length' => 255, 'default' => ''],
+];
+$GLOBALS['TL_DCA']['tl_content']['fields']['client_featured'] = [
+    'inputType' => 'select',
+    'options' => ['all_items', 'featured', 'unfeatured', 'featured_first'],
+    'reference' => &$GLOBALS['TL_LANG']['tl_content'],
+    'eval' => ['tl_class' => 'w50 clr'],
+    'sql' => ['type' => 'string', 'length' => 16, 'default' => 'all_items', 'platformOptions' => ['collation' => 'ascii_bin']],
 ];
