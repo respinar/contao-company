@@ -11,7 +11,6 @@ declare(strict_types=1);
  */
 
 use Contao\Controller;
-use Contao\CoreBundle\Image\ImageSizes;
 
 /*
  * Content elements
@@ -47,16 +46,17 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['project_listClass'] = [
     'sql' => ['type' => 'string', 'length' => 255, 'default' => ''],
 ];
 $GLOBALS['TL_DCA']['tl_content']['fields']['project_imgSize'] = [
-    'label'     => &$GLOBALS['TL_LANG']['MSC']['imgSize'],
+    'label' => &$GLOBALS['TL_LANG']['MSC']['imgSize'],
     'inputType' => 'imageSize',
     'reference' => &$GLOBALS['TL_LANG']['MSC'],
-    'eval'      => [
+    'eval' => [
         'rgxp' => 'natural',
         'includeBlankOption' => true,
         'nospace' => true,
         'helpwizard' => true,
         'tl_class' => 'w50 clr',
     ],
+
     'sql' => [
         'type' => 'string',
         'length' => 128,
@@ -70,33 +70,33 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['testimonial_template'] = [
     'inputType' => 'select',
     'options_callback' => static fn (): array => Controller::getTemplateGroup('testimonial_'),
     'eval' => ['tl_class' => 'w50', 'chosen' => true, 'includeBlankOption' => true],
-    'sql' => "varchar(64) NOT NULL default ''",
+    'sql' => ['type' => 'string', 'length' => 64, 'default' => ''],
 ];
 $GLOBALS['TL_DCA']['tl_content']['fields']['testimonial_archives'] = [
     'inputType' => 'checkbox',
     'foreignKey' => 'tl_company_testimonial_archive.title',
     'eval' => ['multiple' => true, 'tl_class' => 'clr'],
-    'sql' => 'blob NULL',
+    'sql' => ['type' => 'blob', 'length' => 65535, 'notnull' => false],
 ];
 $GLOBALS['TL_DCA']['tl_content']['fields']['testimonial_categories'] = [
     'inputType' => 'checkbox',
     'foreignKey' => 'tl_company_category.title',
     'eval' => ['multiple' => true, 'tl_class' => 'clr'],
-    'sql' => 'blob NULL',
+    'sql' => ['type' => 'blob', 'length' => 65535, 'notnull' => false],
 ];
 $GLOBALS['TL_DCA']['tl_content']['fields']['testimonial_featured'] = [
     'inputType' => 'select',
     'options' => ['all', 'featured', 'unfeatured'],
     'reference' => &$GLOBALS['TL_LANG']['tl_content']['testimonial_featured_options'],
     'eval' => ['tl_class' => 'w50'],
-    'sql' => "varchar(16) NOT NULL default 'all'",
+    'sql' => ['type' => 'string', 'length' => 16, 'default' => 'all'],
 ];
 $GLOBALS['TL_DCA']['tl_content']['fields']['testimonial_order'] = [
     'inputType' => 'select',
     'options' => ['date_asc', 'date_desc', 'random'],
     'reference' => &$GLOBALS['TL_LANG']['tl_content']['testimonial_order'],
     'eval' => ['tl_class' => 'w50'],
-    'sql' => "varchar(16) NOT NULL default 'date_desc'",
+    'sql' => ['type' => 'string', 'length' => 16, 'default' => 'date_desc'],
 ];
 
 // Clients Palette
