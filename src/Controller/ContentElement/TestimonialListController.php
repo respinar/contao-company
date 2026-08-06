@@ -40,15 +40,26 @@ class TestimonialListController extends AbstractContentElementController
             default => null,
         };
 
-        $limit = $model->numberOfItems > 0 ? (int) $model->numberOfItems : 0;
-        $order = $model->testimonial_order ?: 'date_desc';
+        $arrOptions = [];
+
+        $arrOptions['limit'] = $model->numberOfItems > 0 ? (int) $model->numberOfItems : 0;
+
+        $t = TestimonialModel::getTable();
+        $arrOptions['order'] = match ($model->testimonial_order)
+        {
+            'random' => "RAND()",
+            'date_asc' => "$t.date ASC",
+            default => "$t.date DESC",
+        };
+
+        if ('featured_first' === $model->testimonial_featured) {
+            $arrOptions['order'] .= ", $t.featured DESC";
+        }
 
         $testimonials = TestimonialModel::findPublishedByPids(
             $archives,
             $blnFeatured,
-            $categories,
-            $order,
-            $limit,
+            $arrOptions,
         );
 
         if (null === $testimonials) {

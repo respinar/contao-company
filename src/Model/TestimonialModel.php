@@ -15,7 +15,6 @@ namespace Respinar\CompanyBundle\Model;
 use Contao\Date;
 use Contao\Model;
 use Contao\Model\Collection;
-use Contao\StringUtil;
 
 class TestimonialModel extends Model
 {
@@ -41,7 +40,7 @@ class TestimonialModel extends Model
         }
 
         if (!isset($arrOptions['order'])) {
-            $arrOptions['order'] = "$t.sorting ASC";
+            $arrOptions['order'] = "$t.date ASC";
         }
 
         if ($intLimit > 0) {
@@ -59,7 +58,7 @@ class TestimonialModel extends Model
      *
      * @return Collection<TestimonialModel>|null
      */
-    public static function findPublishedByPids(array $arrPids, bool|null $blnFeatured = null, array $arrCategoryIds = [], string $strOrder = 'date_desc', int $intLimit = 0, int $intOffset = 0, array $arrOptions = []): Collection|null
+    public static function findPublishedByPids(array $arrPids, bool|null $blnFeatured = null, array $arrOptions = []): Collection|null
     {
         if (empty($arrPids) || !\is_array($arrPids)) {
             return null;
@@ -79,34 +78,7 @@ class TestimonialModel extends Model
             $arrColumns[] = "$t.published=1 AND ($t.start='' OR $t.start<=$time) AND ($t.stop='' OR $t.stop>$time)";
         }
 
-        if (!isset($arrOptions['order'])) {
-            $arrOptions['order'] = static::resolveOrder($strOrder);
-        }
-
-        $arrOptions['limit'] = $intLimit;
-        $arrOptions['offset'] = $intOffset;
-
-        $collection = static::findBy($arrColumns, null, $arrOptions);
-
-        if (null === $collection || empty($arrCategoryIds)) {
-            return $collection;
-        }
-
-        $models = [];
-
-        foreach ($collection as $model) {
-            $itemCategories = StringUtil::deserialize($model->categories ?? '', true);
-
-            if (\count(array_intersect($itemCategories, $arrCategoryIds)) > 0) {
-                $models[] = $model;
-            }
-        }
-
-        if (empty($models)) {
-            return null;
-        }
-
-        return new Collection($models, static::$strTable);
+        return static::findBy($arrColumns, null, $arrOptions);
     }
 
     /**
