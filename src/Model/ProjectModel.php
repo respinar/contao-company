@@ -54,7 +54,7 @@ class ProjectModel extends Model
      *
      * @return Collection<ProjectModel>|null
      */
-    public static function findPublishedByPids(array $arrPids, bool|null $blnFeatured = null, int $intLimit = 0, int $intOffset = 0, array $arrOptions = []): Collection|null
+    public static function findPublishedByPids(array $arrPids, bool|null $blnFeatured = null, array $arrOptions = [], int $intLimit = 0, int $intOffset = 0): Collection|null
     {
         if (empty($arrPids) || !\is_array($arrPids)) {
             return null;
