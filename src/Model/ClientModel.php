@@ -25,7 +25,6 @@ class ClientModel extends Model
      *
      * @param int       $intId       The client group ID
      * @param bool|null $blnFeatured An optional featured filter
-     * @param int       $intLimit    An optional limit
      * @param array     $arrOptions  An optional options array
      *
      * @return Collection<ClientModel>|null A collection of models or null if there are no clients
