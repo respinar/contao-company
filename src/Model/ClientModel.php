@@ -30,7 +30,7 @@ class ClientModel extends Model
      *
      * @return Collection<ClientModel>|null A collection of models or null if there are no clients
      */
-    public static function findPublishedByPid(int $intId, bool|null $blnFeatured = null, int $intLimit = 0, array $arrOptions = []): Collection|null
+    public static function findPublishedByPid(int $intId, bool|null $blnFeatured = null, array $arrOptions = []): Collection|null
     {
         $t = static::$strTable;
         $arrColumns = ["$t.pid=".$intId];
@@ -48,10 +48,6 @@ class ClientModel extends Model
 
         if (!isset($arrOptions['order'])) {
             $arrOptions['order'] = "$t.sorting ASC";
-        }
-
-        if ($intLimit > 0) {
-            $arrOptions['limit'] = $intLimit;
         }
 
         return static::findBy($arrColumns, null, $arrOptions);

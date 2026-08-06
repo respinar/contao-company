@@ -44,16 +44,16 @@ class ClientListController extends AbstractContentElementController
 
         $arrOptions = [];
 
+        $t = ClientModel::getTable();
         if ('featured_first' === $model->client_featured) {
-            $arrOptions['order'] = 'tl_company_client.featured DESC, tl_company_client.sorting ASC';
+            $arrOptions['order'] = "$t.featured DESC, $t.sorting ASC";
         }
 
-        $limit = $model->numberOfItems > 0 ? (int) $model->numberOfItems : 0;
+        $arrOptions['limit'] = $model->numberOfItems > 0 ? (int) $model->numberOfItems : 0;
 
         $clientCollection = ClientModel::findPublishedByPid(
             $model->clientGroup,
             $blnFeatured,
-            $limit,
             $arrOptions,
         );
 
