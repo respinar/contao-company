@@ -54,7 +54,7 @@ class ProjectModel extends Model
      *
      * @return Collection<ProjectModel>|null
      */
-    public static function findPublishedByPids(array $arrPids, bool|null $blnFeatured = null, array $arrOptions = [], int $intLimit = 0, int $intOffset = 0): Collection|null
+    public static function findPublishedByPids(array $arrPids, bool|null $blnFeatured = null, array $arrOptions = []): Collection|null
     {
         if (empty($arrPids) || !\is_array($arrPids)) {
             return null;
@@ -77,9 +77,6 @@ class ProjectModel extends Model
         if (!isset($arrOptions['order'])) {
             $arrOptions['order'] = "$t.date DESC";
         }
-
-        $arrOptions['limit'] = $intLimit;
-        $arrOptions['offset'] = $intOffset;
 
         return static::findBy($arrColumns, null, $arrOptions);
     }

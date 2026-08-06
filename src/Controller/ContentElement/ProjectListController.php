@@ -46,13 +46,14 @@ class ProjectListController extends AbstractContentElementController
 
         $arrOptions = [];
 
+        $t = ProjectModel::getTable();
         if ('featured_first' === $model->project_featured) {
-            $arrOptions['order'] = 'tl_company_project.featured DESC, tl_company_project.date ASC';
+            $arrOptions['order'] = "$t.featured DESC, $t.date ASC";
         }
 
-        $limit = $model->numberOfItems > 0 ? (int) $model->numberOfItems : 0;
+        $arrOptions['limit'] = $model->numberOfItems > 0 ? (int) $model->numberOfItems : 0;
 
-        $projectCollection = ProjectModel::findPublishedByPids($archives, $blnFeatured, $arrOptions, $limit);
+        $projectCollection = ProjectModel::findPublishedByPids($archives, $blnFeatured, $arrOptions);
 
         if (null === $projectCollection) {
             return $template->getResponse('');
