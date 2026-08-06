@@ -38,7 +38,21 @@ class ProjectListController extends AbstractContentElementController
             return $template->getResponse('');
         }
 
-        $projectCollection = ProjectModel::findPublishedByPids($archives);
+        $blnFeatured = match ($model->project_featured) {
+            'featured' => true,
+            'unfeatured' => false,
+            default => null,
+        };
+
+        $arrOptions = [];
+
+        if ('featured_first' === $model->project_featured) {
+            $arrOptions['order'] = 'tl_company_project.featured DESC, tl_company_project.date ASC';
+        }
+
+        $limit = $model->numberOfItems > 0 ? (int) $model->numberOfItems : 0;
+
+        $projectCollection = ProjectModel::findPublishedByPids($archives, $blnFeatured, $arrOptions, $limit);
 
         if (null === $projectCollection) {
             return $template->getResponse('');
