@@ -21,7 +21,7 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['client_list'] = '{type_legend},typ
 $GLOBALS['TL_DCA']['tl_content']['palettes']['client_detail'] = '{type_legend},type,headline;{template_legend:hide},customTpl,client_template;{image_legend},size;{project_legend},project_template,project_listClass,project_imgSize;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
 
 // Projects Palettes
-$GLOBALS['TL_DCA']['tl_content']['palettes']['project_list'] = '{type_legend},type,headline,title;;{project_legend},project_archives;{image_legend},size;{template_legend:hide},customTpl,project_listClass,project_featured,project_template;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['project_list'] = '{type_legend},type,headline,title;;{project_legend},project_archives;{image_legend},size;{template_legend:hide},customTpl,project_listClass,project_featured,numberOfItems,project_template;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['project_detail'] = '{type_legend},type,headline,title;;{image_legend},size;{template_legend:hide},customTpl,project_template;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
 
 // Testimonials Palettes
