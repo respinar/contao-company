@@ -32,7 +32,7 @@ class TestimonialListController extends AbstractContentElementController
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
         $archives = StringUtil::deserialize($model->testimonial_archives, true);
-        $categories = StringUtil::deserialize($model->testimonial_categories, true);
+        // $categories = StringUtil::deserialize($model->testimonial_categories, true);
 
         $blnFeatured = match ($model->testimonial_featured) {
             'featured' => true,
@@ -45,9 +45,8 @@ class TestimonialListController extends AbstractContentElementController
         $arrOptions['limit'] = $model->numberOfItems > 0 ? (int) $model->numberOfItems : 0;
 
         $t = TestimonialModel::getTable();
-        $arrOptions['order'] = match ($model->testimonial_order)
-        {
-            'random' => "RAND()",
+        $arrOptions['order'] = match ($model->testimonial_order) {
+            'random' => 'RAND()',
             'date_asc' => "$t.date ASC",
             default => "$t.date DESC",
         };
