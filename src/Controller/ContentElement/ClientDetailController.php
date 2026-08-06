@@ -15,10 +15,8 @@ namespace Respinar\CompanyBundle\Controller\ContentElement;
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
-use Contao\CoreBundle\Exception\PageNotFoundException;
 use Contao\CoreBundle\Twig\FragmentTemplate;
 use Contao\Input;
-use Contao\Environment;
 use Respinar\CompanyBundle\Model\ClientModel;
 use Respinar\CompanyBundle\Model\ProjectModel;
 use Respinar\CompanyBundle\Renderer\ClientRenderer;
@@ -51,18 +49,17 @@ class ClientDetailController extends AbstractContentElementController
         $template->set('client', $this->clientRenderer->render($client, $model));
 
         // Find projects for this client
-        $time = time();
         $projects = ProjectModel::findBy(
             ['client=?', 'published=?'],
             [$client->id, 1],
-            ['order' => 'date DESC']
+            ['order' => 'date DESC'],
         );
 
         $projectsArr = [];
 
         $model->size = null;
 
-        if ($projects !== null) {
+        if (null !== $projects) {
             foreach ($projects as $project) {
                 $projectsArr[] = $this->projectRenderer->render($project, $model);
             }
