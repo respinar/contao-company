@@ -81,16 +81,6 @@ class TestimonialModel extends Model
         return static::findBy($arrColumns, null, $arrOptions);
     }
 
-    /**
-     * Generates the label for a testimonial record.
-     *
-     * @param array<string, mixed> $row
-     */
-    public static function listTestimonials(array $row): string
-    {
-        return '<div class="tl_content_left">'.($row['title'] ?? '').'</div>';
-    }
-
     private static function resolveOrder(string $order): string
     {
         $t = static::$strTable;
