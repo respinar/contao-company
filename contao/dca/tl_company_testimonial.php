@@ -48,7 +48,7 @@ $GLOBALS['TL_DCA']['tl_company_testimonial'] = [
                 'href' => 'act=toggle&field=published',
                 'icon' => 'toggle.svg',
                 'primary' => true,
-                'showInHeader' => true
+                'showInHeader' => true,
             ],
             'feature' => [
                 'href' => 'act=toggle&field=featured',

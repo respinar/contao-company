@@ -49,8 +49,8 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['project_imgSize'] = [
     'label' => &$GLOBALS['TL_LANG']['MSC']['imgSize'],
     'inputType' => 'imageSize',
     'reference' => &$GLOBALS['TL_LANG']['MSC'],
-    'eval' => [        'rgxp' => 'natural',        'includeBlankOption' => true,        'nospace' => true,        'helpwizard' => true,        'tl_class' => 'w50 clr',    ],
-    'sql' => [        'type' => 'string',        'length' => 128,        'default' => '',        'platformOptions' => ['collation' => 'ascii_bin'],    ],
+    'eval' => ['rgxp' => 'natural', 'includeBlankOption' => true, 'nospace' => true, 'helpwizard' => true, 'tl_class' => 'w50 clr'],
+    'sql' => ['type' => 'string', 'length' => 128, 'default' => '', 'platformOptions' => ['collation' => 'ascii_bin']],
 ];
 $GLOBALS['TL_DCA']['tl_content']['fields']['project_featured'] = [
     'inputType' => 'select',
