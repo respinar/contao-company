@@ -80,4 +80,26 @@ class ProjectModel extends Model
 
         return static::findBy($arrColumns, null, $arrOptions);
     }
+
+    /**
+     * Find published project items by their parent ID and ID or alias.
+     *
+     * @param mixed $varId      The numeric ID or alias name
+     * @param array $arrPids    An array of parent IDs
+     * @param array $arrOptions An optional options array
+     *
+     * @return ProjectModel|null The productModel or null if there are no product
+     */
+    public static function findPublishedByIdOrAlias($varId, array $arrOptions = []): ?ProjectModel
+    {
+        $t = static::$strTable;
+        $arrColumns = ["($t.id=? OR $t.alias=?)"];
+
+        if (!static::isPreviewMode($arrOptions)) {
+            $time = time();
+            $arrColumns[] = "($t.start='' OR $t.start<$time) AND ($t.stop='' OR $t.stop>$time) AND $t.published=1";
+        }
+
+        return static::findOneBy($arrColumns, [is_numeric($varId) ? $varId : 0, $varId], $arrOptions);
+    }
 }
