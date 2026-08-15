@@ -1,14 +1,16 @@
 {% extends "@Contao/content_element/_base.html.twig" %}
 
 {% block content %}
-    {{ client|raw }}
+    {% if backend is defined and backend %}
+        <p>Client detail</p>
+    {% else %}
+        {{ client|raw }}
 
-    {% block projects %}
-        <h2>Projects</h2>
-        <div class="project_list {{ data.project_listClass }}">
-            {{ projects|join|raw }}
-        </div>
-    {% endblock %}
-
-
+        {% block projects %}
+            <h2>Projects</h2>
+            <div class="project_list {{ data.project_listClass }}">
+                {{ projects|join|raw }}
+            </div>
+        {% endblock %}
+    {% endif %}
 {% endblock %}

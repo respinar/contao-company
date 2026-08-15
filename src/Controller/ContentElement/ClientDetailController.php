@@ -15,6 +15,7 @@ namespace Respinar\CompanyBundle\Controller\ContentElement;
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
+use Contao\CoreBundle\Exception\PageNotFoundException;
 use Contao\CoreBundle\Twig\FragmentTemplate;
 use Contao\Input;
 use Respinar\CompanyBundle\Model\ClientModel;
@@ -35,17 +36,24 @@ class ClientDetailController extends AbstractContentElementController
 
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
-        $alias_id = Input::get('auto_item');
+      if ($request->attributes->get('_scope') === 'backend') {
+          $template->backend = true;
+          $template->headline = $model->headline;
 
-        if (!$alias_id) {
-            return new Response('Client Detail');
+          return $template->getResponse();
+      }
+        $autoItem = Input::get('auto_item');
+
+        if (null === $autoItem) {
+            throw new PageNotFoundException('Id or alias not found: '.$request->getUri());
         }
 
-        $client = ClientModel::findPublishedByIdOrAlias($alias_id);
+        $client = ClientModel::findPublishedByIdOrAlias($autoItem);
 
         if (!$client) {
-            return new Response('', Response::HTTP_NOT_FOUND);
+            throw new PageNotFoundException('Client not found: '.$request->getUri());
         }
+
         $template->set('client', $this->clientRenderer->render($client, $model));
 
         // Find projects for this client
