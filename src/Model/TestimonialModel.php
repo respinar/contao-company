@@ -81,6 +81,31 @@ class TestimonialModel extends Model
         return static::findBy($arrColumns, null, $arrOptions);
     }
 
+    /**
+     * Find published testimonials by their project ID.
+     *
+     * @param int   $intId      The project ID
+     * @param array $arrOptions An optional options array
+     *
+     * @return TestimonialModel|null
+     */
+    public static function findPublishedByProject(int $intId, array $arrOptions = []): TestimonialModel|null
+    {
+        $t = static::$strTable;
+        $arrColumns = ["$t.project=?"];
+
+        if (!static::isPreviewMode($arrOptions)) {
+            $time = Date::floorToMinute();
+            $arrColumns[] = "$t.published=1 AND ($t.start='' OR $t.start<=$time) AND ($t.stop='' OR $t.stop>$time)";
+        }
+
+        if (!isset($arrOptions['order'])) {
+            $arrOptions['order'] = "$t.date DESC";
+        }
+
+        return static::findOneBy($arrColumns, [$intId], $arrOptions);
+    }
+
     private static function resolveOrder(string $order): string
     {
         $t = static::$strTable;

@@ -21,15 +21,19 @@ use Contao\Input;
 use Contao\PageModel;
 use Respinar\CompanyBundle\Model\ProjectArchiveModel;
 use Respinar\CompanyBundle\Model\ProjectModel;
+use Respinar\CompanyBundle\Model\TestimonialModel;
 use Respinar\CompanyBundle\Renderer\ProjectRenderer;
+use Respinar\CompanyBundle\Renderer\TestimonialRenderer;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 #[AsContentElement('project_detail', category: 'company')]
 class ProjectDetailController extends AbstractContentElementController
 {
-    public function __construct(private readonly ProjectRenderer $project_renderer)
-    {
+    public function __construct(
+        private readonly ProjectRenderer $project_renderer,
+        private readonly TestimonialRenderer $testimonial_renderer,
+    ) {
     }
 
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
@@ -85,6 +89,16 @@ class ProjectDetailController extends AbstractContentElementController
 
         $template->project = $this->project_renderer->render($project, $model);
         $template->set('overviewPageUrl', $overviewPageUrl);
+
+        // Fetch and render single testimonial for this project
+        $testimonial = null;
+        $testimonialObj = TestimonialModel::findPublishedByProject((int) $project->id);
+
+        if (null !== $testimonialObj) {
+            $testimonial = $this->testimonial_renderer->renderTestimonial($testimonialObj, $model);
+        }
+
+        $template->set('testimonial', $testimonial);
 
         return $template->getResponse();
     }

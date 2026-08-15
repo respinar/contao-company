@@ -5,6 +5,11 @@
         <p>Project detail</p>
     {% else %}
         {{ project|raw }}
+        {% if testimonial %}
+            <div class="testimonial_single">
+                {{ testimonial|raw }}
+            </div>
+        {% endif %}
         {% if overviewPageUrl %}
             <p class="back"><a href="{{ overviewPageUrl }}">Back to all projects</a></p>
         {% endif %}
