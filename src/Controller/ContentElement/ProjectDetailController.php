@@ -15,6 +15,7 @@ namespace Respinar\CompanyBundle\Controller\ContentElement;
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
+use Contao\CoreBundle\Exception\PageNotFoundException;
 use Contao\CoreBundle\Twig\FragmentTemplate;
 use Contao\Input;
 use Contao\PageModel;
@@ -33,16 +34,25 @@ class ProjectDetailController extends AbstractContentElementController
 
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
-        $alias = Input::get('auto_item');
+        if ('backend' === $request->attributes->get('_scope')) {
+            $template->backend = true;
+            $template->headline = $model->headline;
 
-        if (!$alias) {
-            return new Response('');
+            return $template->getResponse();
         }
 
-        $project = ProjectModel::findOneBy('alias', $alias);
+        $autoItem = Input::get('auto_item');
+
+        // Return an empty string if "auto_item" is not set to combine list and reader on
+        // same page
+        if (null === $autoItem) {
+            throw new PageNotFoundException('Id or alias not found: '.$request->getUri());
+        }
+
+        $project = ProjectModel::findPublishedByIdOrAlias($autoItem);
 
         if (null === $project) {
-            return new Response('');
+            throw new PageNotFoundException('Project not found: '.$request->getUri());
         }
 
         $archive = ProjectArchiveModel::findById($project->pid);
@@ -51,10 +61,12 @@ class ProjectDetailController extends AbstractContentElementController
             return new Response('');
         }
 
-        // Check publishing status and time window
-        $time = time();
-        if (!$project->published || ($project->start && $project->start > $time) || ($project->stop && $project->stop <= $time)) {
-            return new Response('');
+        $overviewPageUrl = null;
+        if (!empty($archive->overviewPage)) {
+            $overviewPage = PageModel::findById((int) $archive->overviewPage);
+            if (null !== $overviewPage) {
+                $overviewPageUrl = $overviewPage->getAbsoluteUrl();
+            }
         }
 
         // Set page meta data
@@ -72,6 +84,7 @@ class ProjectDetailController extends AbstractContentElementController
         }
 
         $template->project = $this->project_renderer->render($project, $model);
+        $template->set('overviewPageUrl', $overviewPageUrl);
 
         return $template->getResponse();
     }

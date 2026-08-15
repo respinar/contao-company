@@ -22,6 +22,7 @@ use Contao\Model\Collection;
  * @property int               $tstamp
  * @property string            $title
  * @property int               $jumpTo
+ * @property int               $overviewPage
  * @property bool              $protected
  * @property string|array|null $groups
  *

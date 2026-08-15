@@ -1,5 +1,12 @@
-{% extends "@Contao/content_element/_base.html.twig" %}
+{% extends '@Contao/content_element/_base.html.twig' %}
 
 {% block content %}
-    {{ project|raw }}
+    {% if backend is defined and backend %}
+        <p>Project detail</p>
+    {% else %}
+        {{ project|raw }}
+        {% if overviewPageUrl %}
+            <p class="back"><a href="{{ overviewPageUrl }}">Back to all projects</a></p>
+        {% endif %}
+    {% endif %}
 {% endblock %}
