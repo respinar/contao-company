@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1" xmlns="urn:oasis:names:tc:xliff:document:1.1">
+  <file datatype="php" original="contao/languages/en/tl_content.php" source-language="en" target-language="fa">
+    <body>
+      <!-- Legends -->
+      <trans-unit id="tl_content.project_legend">
+        <source>Project</source>
+        <target>پروژه</target>
+      </trans-unit>
+      <trans-unit id="tl_content.client_legend">
+        <source>Client</source>
+        <target>مشتری</target>
+      </trans-unit>
+      <trans-unit id="tl_content.config_legend">
+        <source>Configuration</source>
+        <target>پیکربندی</target>
+      </trans-unit>
+
+      <!-- Project content element fields -->
+      <trans-unit id="tl_content.project_archives.0">
+        <source>Project archives</source>
+        <target>آرشیوهای پروژه</target>
+      </trans-unit>
+      <trans-unit id="tl_content.project_archives.1">
+        <source>Please select the project archives from which projects will be listed.</source>
+        <target>لطفاً آرشیوهای پروژه‌ای که پروژه‌ها از آنها فهرست می‌شوند را انتخاب کنید.</target>
+      </trans-unit>
+      <trans-unit id="tl_content.project_template.0">
+        <source>Project template</source>
+        <target>قالب پروژه</target>
+      </trans-unit>
+      <trans-unit id="tl_content.project_template.1">
+        <source>Here you can select a template for the project full view.</source>
+        <target>در اینجا می‌توانید یک قالب برای نمای کامل پروژه انتخاب کنید.</target>
+      </trans-unit>
+      <trans-unit id="tl_content.project_listClass.0">
+        <source>List CSS class</source>
+        <target>کلاس CSS لیست</target>
+      </trans-unit>
+      <trans-unit id="tl_content.project_listClass.1">
+        <source>Here you can enter a CSS class for the project list wrapper.</source>
+        <target>در اینجا می‌توانید یک کلاس CSS برای پوشش لیست پروژه وارد کنید.</target>
+      </trans-unit>
+
+      <!-- Testimonial content element fields -->
+      <trans-unit id="tl_content.testimonial_archives.0">
+        <source>Testimonial archives</source>
+        <target>آرشیوهای گواهی</target>
+      </trans-unit>
+      <trans-unit id="tl_content.testimonial_archives.1">
+        <source>Please select the testimonial archives from which testimonials will be listed.</source>
+        <target>لطفاً آرشیوهای گواهی‌ای که گواهی‌ها از آنها فهرست می‌شوند را انتخاب کنید.</target>
+      </trans-unit>
+      <trans-unit id="tl_content.testimonial_categories.0">
+        <source>Categories</source>
+        <target>دسته‌بندی‌ها</target>
+      </trans-unit>
+      <trans-unit id="tl_content.testimonial_categories.1">
+        <source>Please select one or more categories to filter testimonials.</source>
+        <target>لطفاً یک یا چند دسته‌بندی برای فیلتر کردن گواهی‌ها انتخاب کنید.</target>
+      </trans-unit>
+      <trans-unit id="tl_content.testimonial_featured.0">
+        <source>Featured testimonials</source>
+        <target>گواهی‌های ویژه</target>
+      </trans-unit>
+      <trans-unit id="tl_content.testimonial_featured.1">
+        <source>Here you can filter for featured testimonials.</source>
+        <target>در اینجا می‌توانید برای گواهی‌های ویژه فیلتر اعمال کنید.</target>
+      </trans-unit>
+      <trans-unit id="tl_content.testimonial_featured_options.all">
+        <source>Show all</source>
+        <target>نمایش همه</target>
+      </trans-unit>
+      <trans-unit id="tl_content.testimonial_featured_options.featured">
+        <source>Featured only</source>
+        <target>فقط ویژه‌ها</target>
+      </trans-unit>
+      <trans-unit id="tl_content.testimonial_featured_options.unfeatured">
+        <source>Unfeatured only</source>
+        <target>فقط غیرویژه‌ها</target>
+      </trans-unit>
+      <trans-unit id="tl_content.testimonial_order.0">
+        <source>Order</source>
+        <target>ترتیب</target>
+      </trans-unit>
+      <trans-unit id="tl_content.testimonial_order.1">
+        <source>Please select the sort order for testimonials.</source>
+        <target>لطفاً ترتیب مرتب‌سازی گواهی‌ها را انتخاب کنید.</target>
+      </trans-unit>
+      <trans-unit id="tl_content.testimonial_order_options.sorting_asc">
+        <source>Sort by date (ascending)</source>
+        <target>مرتب‌سازی بر اساس تاریخ (صعودی)</target>
+      </trans-unit>
+      <trans-unit id="tl_content.testimonial_order_options.sorting_desc">
+        <source>Sort by date (descending)</source>
+        <target>مرتب‌سازی بر اساس تاریخ (نزولی)</target>
+      </trans-unit>
+      <trans-unit id="tl_content.testimonial_order_options.date_asc">
+        <source>Date (oldest first)</source>
+        <target>تاریخ (قدیمی‌ترین اول)</target>
+      </trans-unit>
+      <trans-unit id="tl_content.testimonial_order_options.date_desc">
+        <source>Date (newest first)</source>
+        <target>تاریخ (جدیدترین اول)</target>
+      </trans-unit>
+      <trans-unit id="tl_content.testimonial_order_options.random">
+        <source>Random</source>
+        <target>تصادفی</target>
+      </trans-unit>
+      <trans-unit id="tl_content.testimonial_template.0">
+        <source>Testimonial template</source>
+        <target>قالب گواهی</target>
+      </trans-unit>
+      <trans-unit id="tl_content.testimonial_template.1">
+        <source>Here you can select a template for the testimonial full view.</source>
+        <target>در اینجا می‌توانید یک قالب برای نمای کامل گواهی انتخاب کنید.</target>
+      </trans-unit>
+
+      <!-- Client content element fields -->
+      <trans-unit id="tl_content.clientGroup.0">
+        <source>Client group</source>
+        <target>گروه مشتری</target>
+      </trans-unit>
+      <trans-unit id="tl_content.clientGroup.1">
+        <source>Please select a client group.</source>
+        <target>لطفاً یک گروه مشتری انتخاب کنید.</target>
+      </trans-unit>
+      <trans-unit id="tl_content.client_template.0">
+        <source>Client template</source>
+        <target>قالب مشتری</target>
+      </trans-unit>
+      <trans-unit id="tl_content.client_template.1">
+        <source>Here you can select a template for the client full view.</source>
+        <target>در اینجا می‌توانید یک قالب برای نمای کامل مشتری انتخاب کنید.</target>
+      </trans-unit>
+      <trans-unit id="tl_content.client_listClass.0">
+        <source>List CSS class</source>
+        <target>کلاس CSS لیست</target>
+      </trans-unit>
+      <trans-unit id="tl_content.client_listClass.1">
+        <source>Here you can enter a CSS class for the client list wrapper.</source>
+        <target>در اینجا می‌توانید یک کلاس CSS برای پوشش لیست مشتری وارد کنید.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

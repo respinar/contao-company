@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1" xmlns="urn:oasis:names:tc:xliff:document:1.1">
+  <file datatype="php" original="contao/languages/en/modules.php" source-language="en" target-language="fa">
+    <body>
+      <trans-unit id="MOD.company.0">
+        <source>Company modules</source>
+        <target>ماژول‌های شرکت</target>
+      </trans-unit>
+      <trans-unit id="MOD.category.0">
+        <source>Categories</source>
+        <target>دسته‌بندی‌ها</target>
+      </trans-unit>
+      <trans-unit id="MOD.category.1">
+        <source>Manage categories for projects, clients, testimonials, etc.</source>
+        <target>مدیریت دسته‌بندی‌ها برای پروژه‌ها، مشتریان، گواهی‌ها و غیره.</target>
+      </trans-unit>
+      <trans-unit id="MOD.clients.0">
+        <source>Clients</source>
+        <target>مشتریان</target>
+      </trans-unit>
+      <trans-unit id="MOD.clients.1">
+        <source>Manage clients and their details.</source>
+        <target>مدیریت مشتریان و جزئیات آن‌ها.</target>
+      </trans-unit>
+      <trans-unit id="MOD.projects.0">
+        <source>Projects</source>
+        <target>پروژه‌ها</target>
+      </trans-unit>
+      <trans-unit id="MOD.projects.1">
+        <source>Manage projects and portfolios.</source>
+        <target>مدیریت پروژه‌ها و نمونه‌کارها.</target>
+      </trans-unit>
+      <trans-unit id="MOD.testimonials.0">
+        <source>Testimonials</source>
+        <target>گواهی‌ها</target>
+      </trans-unit>
+      <trans-unit id="MOD.testimonials.1">
+        <source>Manage testimonials and references.</source>
+        <target>مدیریت گواهی‌ها و مراجع.</target>
+      </trans-unit>
+      <trans-unit id="MOD.location.0">
+        <source>Locations</source>
+        <target>مکان‌ها</target>
+      </trans-unit>
+      <trans-unit id="MOD.location.1">
+        <source>Manage company locations.</source>
+        <target>مدیریت مکان‌های شرکت.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1" xmlns="urn:oasis:names:tc:xliff:document:1.1">
+  <file datatype="php" original="contao/languages/en/tl_company_client.php" source-language="en" target-language="fa">
+    <body>
+      <trans-unit id="tl_company_client.title_legend">
+        <source>Name and alias</source>
+        <target>نام و نام مستعار</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.logo_legend">
+        <source>Logo</source>
+        <target>لوگو</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.details_legend">
+        <source>Details</source>
+        <target>جزئیات</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.category_legend">
+        <source>Categories</source>
+        <target>دسته‌بندی‌ها</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.publish_legend">
+        <source>Publish settings</source>
+        <target>تنظیمات انتشار</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.pid.0">
+        <source>Group</source>
+        <target>گروه</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.pid.1">
+        <source>The client group this client belongs to.</source>
+        <target>گروه مشتری که این مشتری به آن تعلق دارد.</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.name.0">
+        <source>Name</source>
+        <target>نام</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.name.1">
+        <source>Please enter the client/company name.</source>
+        <target>لطفاً نام مشتری/شرکت را وارد کنید.</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.alias.0">
+        <source>Alias</source>
+        <target>نام مستعار</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.alias.1">
+        <source>The alias is a unique reference that can be used instead of the numeric ID.</source>
+        <target>نام مستعار یک مرجع یکتا است که می‌تواند به‌جای شناسه عددی استفاده شود.</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.featured.0">
+        <source>Featured</source>
+        <target>ویژه</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.featured.1">
+        <source>Mark the client as featured.</source>
+        <target>مشتری را به‌عنوان ویژه علامت‌گذاری کنید.</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.logo.0">
+        <source>Logo</source>
+        <target>لوگو</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.logo.1">
+        <source>Please select a client logo.</source>
+        <target>لطفاً یک لوگو برای مشتری انتخاب کنید.</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.website.0">
+        <source>Website</source>
+        <target>وب‌سایت</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.website.1">
+        <source>Please enter an external website URL.</source>
+        <target>لطفاً نشانی وب‌سایت خارجی را وارد کنید.</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.description.0">
+        <source>Description</source>
+        <target>توضیحات</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.description.1">
+        <source>Please enter a description for this client.</source>
+        <target>لطفاً توضیحاتی برای این مشتری وارد کنید.</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.location.0">
+        <source>Location</source>
+        <target>مکان</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.location.1">
+        <source>Please select a location.</source>
+        <target>لطفاً یک مکان انتخاب کنید.</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.categories.0">
+        <source>Categories</source>
+        <target>دسته‌بندی‌ها</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.categories.1">
+        <source>Please select one or more categories.</source>
+        <target>لطفاً یک یا چند دسته‌بندی انتخاب کنید.</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.published.0">
+        <source>Publish client</source>
+        <target>انتشار مشتری</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.published.1">
+        <source>Make the client visible on the website.</source>
+        <target>مشتری را در وب‌سایت قابل مشاهده کنید.</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.start.0">
+        <source>Show from</source>
+        <target>نمایش از</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.start.1">
+        <source>Do not show the client on the website before this date.</source>
+        <target>مشتری را پیش از این تاریخ در وب‌سایت نمایش ندهید.</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.stop.0">
+        <source>Show until</source>
+        <target>نمایش تا</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.stop.1">
+        <source>Do not show the client on the website after this date.</source>
+        <target>مشتری را پس از این تاریخ در وب‌سایت نمایش ندهید.</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.new.0">
+        <source>New client</source>
+        <target>مشتری جدید</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.new.1">
+        <source>Create a new client</source>
+        <target>ایجاد مشتری جدید</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.edit.0">
+        <source>Edit client</source>
+        <target>ویرایش مشتری</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.edit.1">
+        <source>Edit client ID %s</source>
+        <target>ویرایش مشتری شناسه %s</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.copy.0">
+        <source>Duplicate client</source>
+        <target>کپی مشتری</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.copy.1">
+        <source>Duplicate client ID %s</source>
+        <target>کپی مشتری شناسه %s</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.delete.0">
+        <source>Delete client</source>
+        <target>حذف مشتری</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.delete.1">
+        <source>Delete client ID %s</source>
+        <target>حذف مشتری شناسه %s</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.show.0">
+        <source>Client details</source>
+        <target>جزئیات مشتری</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.show.1">
+        <source>Show details of client ID %s</source>
+        <target>نمایش جزئیات مشتری شناسه %s</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.toggle.0">
+        <source>Publish/unpublish client</source>
+        <target>انتشار/عدم انتشار مشتری</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.toggle.1">
+        <source>Publish/unpublish client ID %s</source>
+        <target>انتشار/عدم انتشار مشتری شناسه %s</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.all.0">
+        <source>Edit multiple</source>
+        <target>ویرایش چندتایی</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.all.1">
+        <source>Edit multiple clients at once</source>
+        <target>ویرایش چندین مشتری به‌طور هم‌زمان</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.cut.0">
+        <source>Move client</source>
+        <target>جابجایی مشتری</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.cut.1">
+        <source>Move client ID %s</source>
+        <target>جابجایی مشتری شناسه %s</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.feature.0">
+        <source>Feature client</source>
+        <target>مشتری ویژه</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.feature.1">
+        <source>Feature/unfeature client ID %s</source>
+        <target>ویژه/غیرویژه کردن مشتری شناسه %s</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.pasteafter.0">
+        <source>Paste after</source>
+        <target>قرار دادن پس از</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.pasteafter.1">
+        <source>Paste after client ID %s</source>
+        <target>قرار دادن پس از مشتری شناسه %s</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.pasteinto.0">
+        <source>Paste into</source>
+        <target>قرار دادن در داخل</target>
+      </trans-unit>
+      <trans-unit id="tl_company_client.pasteinto.1">
+        <source>Paste into client ID %s</source>
+        <target>قرار دادن در داخل مشتری شناسه %s</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
